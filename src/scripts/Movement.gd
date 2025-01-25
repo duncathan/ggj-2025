@@ -10,6 +10,7 @@ enum State {
 	RUNNING,
 	JUMPING,
 	FALLING,
+	FAST_FALLING,
 	HITSTUN
 }
 
@@ -136,6 +137,8 @@ func _y_velocity(_velocity: Vector2, delta: float) -> Vector2:
 	# airborne (check after jumping)
 	if not is_on_floor:
 		self.movement_state = State.JUMPING if _jumping else State.FALLING
+		if fastFall:
+			self.movement_state = State.FAST_FALLING
 		
 		if _coyote_time_active and $Coyote.is_stopped():
 			$Coyote.start(physics.COYOTE_TIME)

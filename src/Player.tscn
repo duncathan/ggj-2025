@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bl8erfewjd507"]
+[gd_scene load_steps=17 format=3 uid="uid://bl8erfewjd507"]
 
 [ext_resource type="Script" path="res://src/scripts/player_controls.gd" id="1_bppwm"]
 [ext_resource type="PackedScene" uid="uid://l52k1xfcffsr" path="res://src/scripts/Movement.tscn" id="2_bppbm"]
 [ext_resource type="Script" path="res://src/scripts/PhysicsAttributes.gd" id="2_j8414"]
 [ext_resource type="Texture2D" uid="uid://d5ll536er2cf" path="res://assets/overworld/annie.png" id="4_v4y20"]
+[ext_resource type="Script" path="res://src/player_sprite.gd" id="5_1d0qt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlqec"]
 size = Vector2(30, 30)
@@ -122,6 +123,8 @@ script = ExtResource("1_bppwm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w5fwd")
+animation = &"dive"
+script = ExtResource("5_1d0qt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
@@ -129,3 +132,6 @@ limit_top = 0
 limit_right = 2080
 limit_bottom = 1180
 limit_smoothed = true
+
+[connection signal="facing_changed" from="Movement" to="AnimatedSprite2D" method="_on_movement_facing_changed"]
+[connection signal="movement_state_changed" from="Movement" to="AnimatedSprite2D" method="_on_movement_movement_state_changed"]

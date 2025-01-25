@@ -12,12 +12,12 @@ size = Vector2(30, 30)
 script = ExtResource("2_j8414")
 jump_height = 4.0
 jump_length = 5.0
-accel_run = 36.0
+accel_run = 24.0
 decel_run = 120.0
-accel_air = 90.0
-decel_air = 60.0
-accel_gravity = 120.0
-accel_jump = 60.0
+accel_air = 24.0
+decel_air = 24.0
+accel_gravity = 30.0
+accel_jump = 45.0
 max_run_speed = 12.0
 COYOTE_TIME = 0.05
 DROPTHROUGH_TIME = 0.1
@@ -47,6 +47,7 @@ shape = SubResource("RectangleShape2D_tlqec")
 physics = SubResource("Resource_luk7k")
 
 [node name="PlayerController" type="Node2D" parent="."]
+process_physics_priority = -1
 script = ExtResource("1_bppwm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

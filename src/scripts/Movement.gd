@@ -35,6 +35,7 @@ var moveLeft: float
 var beginJump: bool
 var holdJump: bool
 var drop: bool
+var fastFall: bool
 
 var _jumping := false
 
@@ -67,7 +68,8 @@ func _x_velocity(_velocity: Vector2, delta: float) -> Vector2:
 	var accel_x = (physics.accel_run if is_on_floor else physics.accel_air) * delta
 	var decel_x = (physics.decel_run if is_on_floor else physics.decel_air) * delta
 	
-	var max_speed = (physics.max_run_speed if is_on_floor else physics.jump_vel.x)
+	#var max_speed = (physics.max_run_speed if is_on_floor else physics.jump_vel.x)
+	var max_speed := physics.max_run_speed
 	max_speed *= max(moveRight, moveLeft) # analog strength of movement, if applicable
 	
 	# decelerate to standstill
@@ -122,10 +124,12 @@ func _y_velocity(_velocity: Vector2, delta: float) -> Vector2:
 	var moveJump := not drop and (beginJump or (_jumping and holdJump))
 	
 	# jumping
-	if is_on_floor or _coyote_time_active:
+	if beginJump or is_on_floor or _coyote_time_active:
 		if moveJump:
 			_velocity.y = physics.jump_vel.y
 			_velocity.x = min(abs(_velocity.x), physics.jump_vel.x)*sign(_velocity.x)
+			if not is_on_floor:
+				_velocity.y /= 1.2
 			_jumping = true
 			_coyote_time_active = false
 	
@@ -141,8 +145,14 @@ func _y_velocity(_velocity: Vector2, delta: float) -> Vector2:
 			# gravity
 			_jumping = false
 			accel_y = physics.accel_gravity*delta
-
-		_velocity.y = min(_velocity.y + accel_y, -physics.jump_vel.y)
+			if fastFall:
+				accel_y *= 2
+		
+		var terminal_velocity := -physics.jump_vel.y
+		if not fastFall:
+			terminal_velocity /= 4
+		
+		_velocity.y = min(_velocity.y + accel_y, terminal_velocity)
 	return _velocity
 
 func _final_movement(_velocity: Vector2, delta: float) -> Vector2:

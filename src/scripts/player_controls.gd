@@ -22,3 +22,4 @@ func _physics_process(delta):
 	MovementController.holdJump = Input.is_action_pressed("game_jump")
 	MovementController.drop = Input.is_action_pressed("game_down") and \
 			Input.is_action_just_pressed("game_jump")
+	MovementController.fastFall = Input.is_action_pressed("game_down")

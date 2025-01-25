@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl8erfewjd507"]
+
+[ext_resource type="Script" path="res://src/scripts/player_controls.gd" id="1_bppwm"]
+[ext_resource type="PackedScene" uid="uid://l52k1xfcffsr" path="res://src/scripts/Movement.tscn" id="2_bppbm"]
+[ext_resource type="Script" path="res://src/scripts/PhysicsAttributes.gd" id="2_j8414"]
+[ext_resource type="Texture2D" uid="uid://blqpl5r4r2om6" path="res://assets/icon.svg" id="3_qfshs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlqec"]
+size = Vector2(30, 30)
+
+[sub_resource type="Resource" id="Resource_luk7k"]
+script = ExtResource("2_j8414")
+jump_height = 4.0
+jump_length = 5.0
+accel_run = 36.0
+decel_run = 120.0
+accel_air = 90.0
+decel_air = 60.0
+accel_gravity = 120.0
+accel_jump = 60.0
+max_run_speed = 12.0
+COYOTE_TIME = 0.05
+DROPTHROUGH_TIME = 0.1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5fwd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qfshs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tlqec")
+
+[node name="Movement" parent="." instance=ExtResource("2_bppbm")]
+physics = SubResource("Resource_luk7k")
+
+[node name="PlayerController" type="Node2D" parent="."]
+script = ExtResource("1_bppwm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_w5fwd")

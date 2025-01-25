@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://l52k1xfcffsr"]
+
+[ext_resource type="Script" path="res://src/scripts/Movement.gd" id="1"]
+
+[node name="Movement" type="Node"]
+script = ExtResource("1")
+facing = 8
+
+[node name="Coyote" type="Timer" parent="."]
+one_shot = true
+
+[node name="Dropthru" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Coyote" to="." method="_on_Coyote_timeout"]
+[connection signal="timeout" from="Dropthru" to="." method="_on_Dropthrough_timeout"]

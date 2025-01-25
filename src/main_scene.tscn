@@ -14,24 +14,31 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
 size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
 [node name="Level" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_gcpyr")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OverWorld" type="Control" parent="UI"]
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="UI"]
+[node name="Panel" type="Panel" parent="UI/OverWorld"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 608.0
 offset_right = 399.0
 offset_bottom = 634.0
 
-[node name="ColorRect" type="ColorRect" parent="UI/Panel"]
+[node name="ColorRect" type="ColorRect" parent="UI/OverWorld/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.292615, 0.292802, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="UI/Panel"]
+[node name="ColorRect2" type="ColorRect" parent="UI/OverWorld/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,7 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(7.12335e-06, 0.841916, 0.8424, 1)
 
-[node name="TextureRect" type="TextureRect" parent="UI/Panel"]
+[node name="TextureRect" type="TextureRect" parent="UI/OverWorld/Panel"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -64,3 +71,34 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_oh4fj")
 expand_mode = 5
+
+[node name="MainOrPause" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="PauseOverlay" type="ColorRect" parent="UI/MainOrPause"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.52549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainOrPause"]
+layout_mode = 0
+offset_left = 992.0
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 2
+
+[node name="PlayLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Play"
+uppercase = true
+
+[node name="QuitLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Quit"
+uppercase = true

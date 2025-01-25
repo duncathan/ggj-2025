@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq46dufukqxoy"]
+
+[ext_resource type="PackedScene" uid="uid://dotjhq8nq71n0" path="res://src/playground.tscn" id="1_gcpyr"]
+
+[node name="Main Scene" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_gcpyr")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

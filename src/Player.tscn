@@ -54,3 +54,10 @@ script = ExtResource("1_bppwm")
 modulate = Color(0, 0, 1, 1)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_w5fwd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 2080
+limit_bottom = 1180
+limit_smoothed = true

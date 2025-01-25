@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnproject"
+type="Resource"
+uid="uid://cfrqe2cpus5vm"
+path="res://.godot/imported/dialog.yarnproject-75549e73dda2a3f32074910359fd71ee.tres"
+
+[deps]
+
+source_file="res://dialog.yarnproject"
+dest_files=["res://.godot/imported/dialog.yarnproject-75549e73dda2a3f32074910359fd71ee.tres"]
+
+[params]
+

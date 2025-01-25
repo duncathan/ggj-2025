@@ -12,17 +12,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymf4v"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_20y0r"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2le05"]
 texture = ExtResource("4_e01r3")
-modulate_color = Color(0.529412, 0.788235, 0.764706, 1)
+modulate_color = Color(0.658824, 0.941176, 0.917647, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h4m8k"]
 texture = ExtResource("4_e01r3")
 modulate_color = Color(0.356863, 0.529412, 0.501961, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2le05"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_20y0r"]
 texture = ExtResource("4_e01r3")
-modulate_color = Color(0.658824, 0.941176, 0.917647, 1)
+modulate_color = Color(0.529412, 0.788235, 0.764706, 1)
 
 [node name="RoundedYarnSpinnerCanvasLayer" type="CanvasLayer"]
 
@@ -80,19 +80,19 @@ offset_right = 555.0
 offset_bottom = 200.0
 grow_horizontal = 2
 size_flags_horizontal = 4
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
 theme_override_font_sizes/normal_font_size = 36
 theme_override_font_sizes/bold_font_size = 36
-theme_override_font_sizes/italics_font_size = 36
-theme_override_font_sizes/bold_italics_font_size = 36
-theme_override_font_sizes/mono_font_size = 36
 theme_override_styles/focus = ExtResource("3_46gk8")
 theme_override_styles/normal = ExtResource("3_46gk8")
 bbcode_enabled = true
@@ -125,11 +125,11 @@ offset_bottom = 118.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_20y0r")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2le05")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_h4m8k")
 theme_override_styles/hover = SubResource("StyleBoxTexture_20y0r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_h4m8k")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_h4m8k")
-theme_override_styles/focus = SubResource("StyleBoxTexture_2le05")
+theme_override_styles/normal = SubResource("StyleBoxTexture_20y0r")
 
 [node name="CharacterNameText" type="RichTextLabel" parent="LineView/ViewControl/LineText"]
 clip_contents = false
@@ -138,19 +138,19 @@ layout_mode = 1
 offset_top = -101.0
 offset_right = 491.0
 offset_bottom = 59.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
 theme_override_font_sizes/normal_font_size = 36
 theme_override_font_sizes/bold_font_size = 36
-theme_override_font_sizes/italics_font_size = 36
-theme_override_font_sizes/bold_italics_font_size = 36
-theme_override_font_sizes/mono_font_size = 36
 theme_override_styles/focus = ExtResource("3_46gk8")
 theme_override_styles/normal = ExtResource("3_46gk8")
 bbcode_enabled = true
@@ -220,19 +220,19 @@ offset_top = 111.0
 offset_right = 526.0
 offset_bottom = 271.0
 grow_horizontal = 2
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
 theme_override_font_sizes/normal_font_size = 36
 theme_override_font_sizes/bold_font_size = 36
-theme_override_font_sizes/italics_font_size = 36
-theme_override_font_sizes/bold_italics_font_size = 36
-theme_override_font_sizes/mono_font_size = 36
 theme_override_styles/focus = ExtResource("3_46gk8")
 theme_override_styles/normal = ExtResource("3_46gk8")
 text = "The last line text goes here"
@@ -261,19 +261,19 @@ offset_top = 8.0
 offset_right = -185.5
 offset_bottom = 168.0
 grow_horizontal = 2
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
-theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
 theme_override_font_sizes/normal_font_size = 36
 theme_override_font_sizes/bold_font_size = 36
-theme_override_font_sizes/italics_font_size = 36
-theme_override_font_sizes/bold_italics_font_size = 36
-theme_override_font_sizes/mono_font_size = 36
 theme_override_styles/focus = ExtResource("3_46gk8")
 theme_override_styles/normal = ExtResource("3_46gk8")
 bbcode_enabled = true

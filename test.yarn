@@ -1,0 +1,25 @@
+﻿title: Start
+tags:
+position: 0,0
+---
+Fish: Oh, hello!
+<<jump Menu>>
+===
+
+title: Menu
+position: 0,200
+---
+-> > TALK
+        Fish: You're in Godot!
+        <<jump Menu>>
+    -> > BUBBLE
+        Fish: Ok.
+        <<jump Menu>>
+    -> > BLUB
+        You: Blub.
+        Fish: ???
+        <<jump Menu>>
+    -> > SWIM AWAY
+        Fish: Bye!
+        <<jump Menu>>
+===

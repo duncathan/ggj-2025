@@ -1,8 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://chwjys424hay2"]
+[gd_scene load_steps=18 format=3 uid="uid://chwjys424hay2"]
 
 [ext_resource type="Texture2D" uid="uid://ca2rrknxunvo2" path="res://assets/fish.png" id="1_qai7q"]
 [ext_resource type="Shader" path="res://assets/Backgrounds.gdshader" id="1_s1x5i"]
 [ext_resource type="Texture2D" uid="uid://tblg4t311vrr" path="res://assets/Circles.png" id="2_b1cri"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs" id="4_pd852"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="5_libje"]
+[ext_resource type="Resource" uid="uid://cfrqe2cpus5vm" path="res://dialog.yarnproject" id="6_ki2bf"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
+[ext_resource type="PackedScene" uid="uid://b56ngcrq31nc5" path="res://addons/YarnSpinner-Godot/Scenes/OptionView.tscn" id="8_3cme3"]
 
 [sub_resource type="Gradient" id="Gradient_posyk"]
 offsets = PackedFloat32Array(0, 0.509091, 1)
@@ -58,8 +63,6 @@ gradient = SubResource("Gradient_q4q25")
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjxtp"]
 atlas = SubResource("GradientTexture2D_ckq7b")
 
-[sub_resource type="Theme" id="Theme_sudj5"]
-
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="CanvasLayer" parent="."]
@@ -86,23 +89,10 @@ texture = ExtResource("2_b1cri")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Fish" type="Sprite2D" parent="."]
 position = Vector2(548, 216)
 scale = Vector2(2.34375, 2.34375)
 texture = ExtResource("1_qai7q")
-
-[node name="GridContainer" type="GridContainer" parent="."]
-visible = false
-offset_left = 166.0
-offset_top = 414.0
-offset_right = 1006.0
-offset_bottom = 574.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="GridContainer" type="Label" parent="GridContainer"]
-layout_mode = 2
-text = "sdgsdgsdgts"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -142,49 +132,48 @@ offset_top = 420.0
 offset_right = 1078.0
 offset_bottom = 637.0
 
+[node name="DialogueRunner" type="Node" parent="Control/BattleMenu/MainBox" node_paths=PackedStringArray("dialogueViews")]
+script = ExtResource("5_libje")
+yarnProject = ExtResource("6_ki2bf")
+dialogueViews = [NodePath("../HBoxContainer/LineView"), NodePath("../HBoxContainer/OptionsListView")]
+startNode = "Start"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/BattleMenu/MainBox"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer"]
-custom_minimum_size = Vector2(931.395, 0)
-layout_direction = 2
+[node name="LineView" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
-theme = SubResource("Theme_sudj5")
 theme_override_constants/margin_left = 11
+script = ExtResource("4_pd852")
+viewControlPath = NodePath("Control")
+lineTextPath = NodePath("Label")
+typewriterEffectSpeed = 100.0
+autoAdvance = true
 
-[node name="Label" type="Label" parent="Control/BattleMenu/MainBox/HBoxContainer/MarginContainer"]
+[node name="Label" type="RichTextLabel" parent="Control/BattleMenu/MainBox/HBoxContainer/LineView"]
 custom_minimum_size = Vector2(0, 200)
 layout_direction = 2
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
 text = "this is the text on the screen this is the text on the screenthi"
 autowrap_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer"]
+[node name="Control" type="Control" parent="Control/BattleMenu/MainBox/HBoxContainer/LineView"]
+layout_mode = 2
+
+[node name="OptionsListView" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer" node_paths=PackedStringArray("lastLineText", "viewControl", "boxContainer")]
 custom_minimum_size = Vector2(200, 0)
-layout_direction = 2
+layout_mode = 2
+script = ExtResource("7_cb5j0")
+optionViewPrefab = ExtResource("8_3cme3")
+lastLineText = NodePath("../LineView/Label")
+viewControl = NodePath("Control")
+boxContainer = NodePath("Control/VBoxContainer")
+
+[node name="Control" type="Control" parent="Control/BattleMenu/MainBox/HBoxContainer/OptionsListView"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/BattleMenu/MainBox/HBoxContainer/MarginContainer2"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/BattleMenu/MainBox/HBoxContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "> Talk"
-
-[node name="Label2" type="Label" parent="Control/BattleMenu/MainBox/HBoxContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "> Blub"
-
-[node name="Label3" type="Label" parent="Control/BattleMenu/MainBox/HBoxContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "> Bubble"
-
-[node name="Label4" type="Label" parent="Control/BattleMenu/MainBox/HBoxContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "> Swim Away"
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/BattleMenu/MainBox/HBoxContainer/OptionsListView/Control"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 217.0

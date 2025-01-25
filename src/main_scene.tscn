@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq46dufukqxoy"]
+[gd_scene load_steps=5 format=3 uid="uid://cq46dufukqxoy"]
 
 [ext_resource type="PackedScene" uid="uid://dotjhq8nq71n0" path="res://src/playground.tscn" id="1_gcpyr"]
+[ext_resource type="AudioStream" uid="uid://l62ighcivil3" path="res://assets/music/mercury-ambient-electronica-275400.mp3" id="2_61awy"]
 
 [sub_resource type="Gradient" id="Gradient_ob5gl"]
 
@@ -102,3 +103,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Quit"
 uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_61awy")
+autoplay = true
+parameters/looping = true

@@ -6,5 +6,6 @@
   "excludeFiles": [],
   "localisation": {},
   "baseLanguage": "en",
-  "compilerOptions": {}
+  "compilerOptions": {},
+  "definitions": "custom_commands.ysls.json"
 }

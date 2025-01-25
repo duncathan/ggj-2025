@@ -12,14 +12,17 @@ position: 0,200
 -> > TALK
         Fish: You're in Godot!
         <<jump Menu>>
+        <<lose_air 1>>
     -> > BUBBLE
         Fish: Ok.
         <<jump Menu>>
+        <<lose_air 10>>
     -> > BLUB
         You: Blub.
         Fish: ???
         <<jump Menu>>
+        <<lose_air 2>>
     -> > SWIM AWAY
         Fish: Bye!
-        <<jump Menu>>
+        <<jump Leave>>
 ===

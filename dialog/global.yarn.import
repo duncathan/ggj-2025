@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://djnfykoyhergn"
+path="res://.godot/imported/global.yarn-9014757caebdca066dfdd62d61195b80.tres"
+
+[deps]
+
+source_file="res://dialog/global.yarn"
+dest_files=["res://.godot/imported/global.yarn-9014757caebdca066dfdd62d61195b80.tres"]
+
+[params]
+

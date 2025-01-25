@@ -1,0 +1,19 @@
+{
+  "Commands": [
+    {
+      "YarnName": "lose_air",
+      "DefinitionName": "lose_air",
+      "Language": "text",
+      "Documentation": "Lose a certain amount of air",
+      "Signature": "lose_air amount",
+      "Parameters": [
+        {
+          "Name": "amount",
+          "DefaultValue": "1",
+          "Type": "number",
+          "Documentation": "How many turns of air to lose."
+        }
+      ]
+    }
+  ]
+}

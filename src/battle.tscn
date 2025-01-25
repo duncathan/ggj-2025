@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://chwjys424hay2"]
+[gd_scene load_steps=19 format=3 uid="uid://chwjys424hay2"]
 
 [ext_resource type="Texture2D" uid="uid://ca2rrknxunvo2" path="res://assets/fish.png" id="1_qai7q"]
 [ext_resource type="Shader" path="res://assets/Backgrounds.gdshader" id="1_s1x5i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cfrqe2cpus5vm" path="res://dialog/dialog.yarnproject" id="5_m4r5r"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
 [ext_resource type="PackedScene" uid="uid://b56ngcrq31nc5" path="res://addons/YarnSpinner-Godot/Scenes/OptionView.tscn" id="8_3cme3"]
+[ext_resource type="AudioStream" uid="uid://sjn02pa0grje" path="res://assets/music/perchlorate-111365.mp3" id="9_t7d7a"]
 
 [sub_resource type="Gradient" id="Gradient_posyk"]
 offsets = PackedFloat32Array(0, 0.509091, 1)
@@ -177,3 +178,8 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 217.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_t7d7a")
+autoplay = true
+parameters/looping = true

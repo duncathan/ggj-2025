@@ -1,6 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq46dufukqxoy"]
+[gd_scene load_steps=6 format=3 uid="uid://cq46dufukqxoy"]
 
 [ext_resource type="PackedScene" uid="uid://dotjhq8nq71n0" path="res://src/playground.tscn" id="1_gcpyr"]
+[ext_resource type="AudioStream" uid="uid://l62ighcivil3" path="res://assets/music/mercury-ambient-electronica-275400.mp3" id="2_61awy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na3r1"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="Gradient" id="Gradient_ob5gl"]
 
@@ -31,48 +38,29 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="UI/OverWorld"]
+[node name="ProgressBar" type="ProgressBar" parent="UI/OverWorld"]
+modulate = Color(0.129412, 1, 1, 1)
 layout_mode = 0
 offset_left = 10.0
-offset_top = 608.0
-offset_right = 399.0
-offset_bottom = 634.0
+offset_top = 612.0
+offset_right = 381.0
+offset_bottom = 639.0
+theme_override_styles/background = SubResource("StyleBoxFlat_na3r1")
+step = 1.0
+value = 70.0
+show_percentage = false
 
-[node name="ColorRect" type="ColorRect" parent="UI/OverWorld/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.292615, 0.292802, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="UI/OverWorld/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -13.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(7.12335e-06, 0.841916, 0.8424, 1)
-
-[node name="TextureRect" type="TextureRect" parent="UI/OverWorld/Panel"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="UI/OverWorld"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 605.0
+offset_right = 400.0
+offset_bottom = 645.0
 texture = SubResource("GradientTexture2D_oh4fj")
 expand_mode = 5
 
 [node name="MainOrPause" type="Control" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 
@@ -84,8 +72,8 @@ color = Color(0, 0, 0, 0.52549)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainOrPause"]
 layout_mode = 0
-offset_left = 992.0
-offset_right = 1152.0
+offset_left = 954.0
+offset_right = 1180.0
 offset_bottom = 648.0
 alignment = 2
 
@@ -96,9 +84,33 @@ theme_override_font_sizes/font_size = 45
 text = "Play"
 uppercase = true
 
+[node name="RePlayLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Restart"
+uppercase = true
+
 [node name="QuitLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Quit"
 uppercase = true
+
+[node name="Label" type="Label" parent="UI/MainOrPause"]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Your bubble popped!
+What Lies Above will now surely consume the ocean, too, in time..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_61awy")
+autoplay = true
+parameters/looping = true

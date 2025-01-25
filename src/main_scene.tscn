@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq46dufukqxoy"]
+[gd_scene load_steps=4 format=3 uid="uid://cq46dufukqxoy"]
 
 [ext_resource type="PackedScene" uid="uid://dotjhq8nq71n0" path="res://src/playground.tscn" id="1_gcpyr"]
+
+[sub_resource type="Gradient" id="Gradient_ob5gl"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oh4fj"]
+gradient = SubResource("Gradient_ob5gl")
 
 [node name="Main Scene" type="Node2D"]
 
@@ -11,3 +16,44 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 608.0
+offset_right = 399.0
+offset_bottom = 634.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.292615, 0.292802, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(7.12335e-06, 0.841916, 0.8424, 1)
+
+[node name="TextureRect" type="TextureRect" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_oh4fj")
+expand_mode = 5

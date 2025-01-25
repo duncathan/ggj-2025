@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl8erfewjd507"]
+[gd_scene load_steps=9 format=3 uid="uid://bl8erfewjd507"]
 
 [ext_resource type="Script" path="res://src/scripts/player_controls.gd" id="1_bppwm"]
 [ext_resource type="PackedScene" uid="uid://l52k1xfcffsr" path="res://src/scripts/Movement.tscn" id="2_bppbm"]
 [ext_resource type="Script" path="res://src/scripts/PhysicsAttributes.gd" id="2_j8414"]
-[ext_resource type="Texture2D" uid="uid://blqpl5r4r2om6" path="res://assets/icon.svg" id="3_qfshs"]
+[ext_resource type="Texture2D" uid="uid://d5ll536er2cf" path="res://assets/overworld/annie.png" id="4_v4y20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlqec"]
 size = Vector2(30, 30)
@@ -22,11 +22,15 @@ max_run_speed = 12.0
 COYOTE_TIME = 0.05
 DROPTHROUGH_TIME = 0.1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnrl0"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_w5fwd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_qfshs")
+"texture": SubResource("AtlasTexture_wnrl0")
 }],
 "loop": true,
 "name": &"default",
@@ -52,8 +56,6 @@ process_physics_priority = -1
 script = ExtResource("1_bppwm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0, 0, 1, 1)
-scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_w5fwd")
 
 [node name="Camera2D" type="Camera2D" parent="."]

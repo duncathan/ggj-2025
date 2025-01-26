@@ -10,22 +10,22 @@ You've encountered {$fishName}! They have a bubble over their head, just like yo
 
 title: breathingFishBattleMenu
 ---
--> > TALK <<if $step is 0>>
+-> TALK <<if $step is 0>>
     <<jump BreathingFishTalk1>>
--> > TALK <<if $step is 1>>
+-> TALK <<if $step is 1>>
     <<jump BreathingFishTalk2>>
--> > BUBBLE
+-> BUBBLE
     <<jump BreathingFishBubble>>
--> > BLUB
+-> BLUB
     <<jump BreathingFishBlub>>
--> > SWIM AWAY
+-> SWIM AWAY
     <<jump BreathingFishSwimAway>>
     
 ===
 
 title: BreathingFishTalk1
 ---
--> > Chitchat
+-> Chitchat
     You: Hey... nice weather we're having? Nice and.. bubbly?
     {$fishName}: You're terrible at small talk. 
     {$fishName}: ...You're going, aren't you? You don't have the time.
@@ -34,7 +34,7 @@ title: BreathingFishTalk1
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
--> > Joke
+-> Joke
     You: Not to burst your bubble, but... I'm leaving.
     {$fishName}: Har har... I still have enough air for awhile yet.
     {$fishName}: But you're really doing it now?
@@ -42,14 +42,14 @@ title: BreathingFishTalk1
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
--> > Fond
+-> Fond
     You: Of course you'd be here to see me off.
     {$fishName}: You're finally going?
     You: Yup. If i don't go now, What Lies Above will come for everything below.
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
--> > Serious
+-> Serious
     You: I'm finally going out to contain What Lies Above.
     {$fishName}: No more time left, huh? Now or never.
     You: Now or never. I wait any longer and it'll come for everything below.

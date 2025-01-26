@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq46dufukqxoy"]
+[gd_scene load_steps=14 format=3 uid="uid://cq46dufukqxoy"]
 
 [ext_resource type="PackedScene" uid="uid://dotjhq8nq71n0" path="res://src/playground.tscn" id="1_gcpyr"]
 [ext_resource type="AudioStream" uid="uid://l62ighcivil3" path="res://assets/music/mercury-ambient-electronica-275400.mp3" id="2_61awy"]
 [ext_resource type="Script" path="res://src/play_lbl.gd" id="2_hrskm"]
 [ext_resource type="Script" path="res://src/quit_lbl.gd" id="3_y3oqj"]
+[ext_resource type="AudioStream" uid="uid://blv5jld36655e" path="res://assets/music/infographic-pop-4-197870.mp3" id="5_jab6q"]
+[ext_resource type="AudioStream" uid="uid://w52as3h2nhxa" path="res://assets/music/infographic-pop-6-197873.mp3" id="6_rvl7o"]
+[ext_resource type="AudioStream" uid="uid://cbjc81g0ttucn" path="res://assets/music/infographic-pop-7-197874.mp3" id="7_56vgm"]
+[ext_resource type="AudioStream" uid="uid://c3d6ggngf2o4j" path="res://assets/music/infographic-pop-8-197875.mp3" id="8_kcu73"]
+[ext_resource type="Script" path="res://src/audio_stream_player.gd" id="9_mc4b3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na3r1"]
 corner_radius_top_left = 5
@@ -15,6 +20,13 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_oh4fj"]
 gradient = SubResource("Gradient_ob5gl")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yayx8"]
+streams_count = 4
+stream_0/stream = ExtResource("5_jab6q")
+stream_1/stream = ExtResource("6_rvl7o")
+stream_2/stream = ExtResource("7_56vgm")
+stream_3/stream = ExtResource("8_kcu73")
 
 [node name="Main Scene" type="Node2D"]
 
@@ -132,7 +144,12 @@ stream = ExtResource("2_61awy")
 autoplay = true
 parameters/looping = true
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_yayx8")
+script = ExtResource("9_mc4b3")
+
 [connection signal="gui_input" from="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" method="_on_gui_input"]
 [connection signal="pressed" from="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" method="_on_pressed"]
+[connection signal="pressed" from="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" to="AudioStreamPlayer2" method="_on_play_lbl_pressed"]
 [connection signal="gui_input" from="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" method="_on_gui_input"]
 [connection signal="pressed" from="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" method="_on_pressed"]

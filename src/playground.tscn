@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://d1qivyt8pwoxp" path="res://src/bubble_encounter.tscn" id="4_pcun8"]
 [ext_resource type="Texture2D" uid="uid://cpwhhxbt40cvp" path="res://assets/overworld/bck_test_layer0.png" id="4_wscv7"]
 [ext_resource type="Texture2D" uid="uid://qutfm64stka1" path="res://assets/overworld/bck_test_layer1.png" id="5_j4ydb"]
-[ext_resource type="Resource" uid="uid://bewclxli5ddc2" path="res://assets/battle/fish/austere.tres" id="8_w84q1"]
-[ext_resource type="Resource" uid="uid://c3i32wo3cnd58" path="res://assets/battle/fish/boyfriend.tres" id="9_ba0ek"]
-[ext_resource type="Resource" uid="uid://55wuo21rm83u" path="res://assets/battle/fish/breathing.tres" id="9_mr8ei"]
+[ext_resource type="Resource" uid="uid://bq5oc47xjvxlx" path="res://assets/battle/fish/austere.tres" id="8_w84q1"]
+[ext_resource type="Resource" uid="uid://cby3xmihe7dpa" path="res://assets/battle/fish/boyfriend.tres" id="9_ba0ek"]
+[ext_resource type="Resource" uid="uid://cb73wkmvxpw6h" path="res://assets/battle/fish/breathing.tres" id="9_mr8ei"]
 [ext_resource type="Resource" uid="uid://d3y4wo0ofsl1j" path="res://assets/battle/fish/hand.tres" id="11_35nei"]
-[ext_resource type="Resource" uid="uid://cpeq3q6djoftg" path="res://assets/battle/whatliesabove/properties.tres" id="11_dfwm6"]
+[ext_resource type="Resource" uid="uid://cqiyi5xe7jkqv" path="res://assets/battle/whatliesabove/properties.tres" id="11_dfwm6"]
 [ext_resource type="Texture2D" uid="uid://cciyb0jrwkj53" path="res://assets/overworld/demo_level.png" id="12_ck8au"]
 
 [node name="Level" type="Node2D"]
@@ -22,7 +22,7 @@ z_index = 1
 tile_set = ExtResource("1_wfj56")
 
 [node name="Player" parent="." instance=ExtResource("2_1pbjj")]
-position = Vector2(67, 206)
+position = Vector2(67, 209)
 
 [node name="background" type="TileMapLayer" parent="."]
 texture_filter = 1

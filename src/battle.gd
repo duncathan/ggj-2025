@@ -18,6 +18,7 @@ func _ready() -> void:
 	if fish.recruit_id != "WhatLiesAbove":
 		self.fish_sprite.modulate = fish.modulate
 	else:
+		self.fish_sprite.modulate = Color.WHITE
 		$background.visible = false
 		$evil_background.visible = true
 	

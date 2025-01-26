@@ -9,8 +9,13 @@ var dialog_runner: DialogueRunner = get_node("Control/BattleMenu/MainBox/Dialogu
 func _ready() -> void:
 	var fish := GameManager.current_fish
 	self.fish_sprite.texture = fish.texture
-	self.fish_sprite.modulate = fish.modulate
+	if fish.recruit_id != "WhatLiesAbove":
+		self.fish_sprite.modulate = fish.modulate
+	else:
+		$background.visible = false
+		$evil_background.visible = true
 	self.dialog_runner.StartDialogue(fish.start_node)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

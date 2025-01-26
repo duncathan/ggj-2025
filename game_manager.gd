@@ -12,6 +12,7 @@ var recruits: Dictionary = {
 	"Austere": false,
 	"Hand": false,
 	"Boyfriends": false,
+	"WhatLiesAbove": false,
 }
 
 func start_battle(fish: FishProperties):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1qivyt8pwoxp"]
+[gd_scene load_steps=7 format=3 uid="uid://d1qivyt8pwoxp"]
 
 [ext_resource type="Script" path="res://src/bubble_encounter.gd" id="1_uedu8"]
 [ext_resource type="Script" path="res://fish_properties.gd" id="2_oubj3"]
 [ext_resource type="Texture2D" uid="uid://dyqcioa8wnplx" path="res://assets/overworld/bubble_placeholder.png" id="3_3r1yg"]
+[ext_resource type="Texture2D" uid="uid://ih0viklqwnaw" path="res://assets/overworld/bubble_placeholder_trans.png" id="4_ghwqq"]
 
 [sub_resource type="Resource" id="Resource_h2pba"]
 script = ExtResource("2_oubj3")
@@ -23,7 +24,11 @@ fish_data = SubResource("Resource_h2pba")
 texture_filter = 1
 texture = ExtResource("3_3r1yg")
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("4_ghwqq")
+
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 

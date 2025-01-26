@@ -15,18 +15,16 @@ var recruits: Dictionary = {
 	"WhatLiesAbove": false,
 }
 
+var bubble_timer := 10
+
 func start_battle(fish: FishProperties):
 	self.current_fish = fish
 	self.return_pos = fish.return_pos
+	self.bubble_timer = 10
 	get_tree().call_deferred("change_scene_to_packed", battle)
 
-func lose_battle():
-	# TODO: game over?
-	leave_battle()
-
-func win_battle():
-	self.recruits[self.current_fish.recruit_id] = true
-	leave_battle()
-
 func leave_battle():
+	if self.bubble_timer > 0:
+		# win the battle
+		self.recruits[self.current_fish.recruit_id] = true
 	get_tree().call_deferred("change_scene_to_packed", overworld)

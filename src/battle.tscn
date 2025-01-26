@@ -269,7 +269,7 @@ layout_mode = 2
 texture = ExtResource("8_rpuuw")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/BattleMenu/Bubble Counter"]
+[node name="BubbleLabel" type="Label" parent="Control/BattleMenu/Bubble Counter"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "10"

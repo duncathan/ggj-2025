@@ -16,27 +16,11 @@
       ]
     },
     {
-      "YarnName": "recruit_fish",
-      "DefinitionName": "recruit_fish",
-      "Language": "text",
-      "Documentation": "Recruit the fish you're talking to",
-      "Signature": "recruit_fish",
-      "Parameters": []
-    },
-    {
       "YarnName": "blow_bubble",
       "DefinitionName": "blow_bubble",
       "Language": "text",
       "Documentation": "Initiate the bubble",
       "Signature": "blow_bubble",
-      "Parameters": []
-    },
-    {
-      "YarnName": "blub",
-      "DefinitionName": "blub",
-      "Language": "text",
-      "Documentation": "Make a blub noise",
-      "Signature": "blub",
       "Parameters": []
     }
   ]

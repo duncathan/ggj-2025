@@ -15,6 +15,13 @@ var recruits: Dictionary = {
 	"WhatLiesAbove": false,
 }
 
+func total_recruits() -> int:
+	var i := 0
+	for x in recruits.values():
+		if x:
+			i += 1
+	return i
+
 var bubble_timer := 10
 
 func start_battle(fish: FishProperties):

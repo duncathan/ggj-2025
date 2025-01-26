@@ -10,3 +10,4 @@ modulate = Color(0.437393, 0.585938, 0.446529, 1)
 start_node = "StartHandFish"
 recruit_id = "Hand"
 return_pos = Vector2(982, 272)
+need_recruits = 1

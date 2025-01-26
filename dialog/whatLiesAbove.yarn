@@ -6,14 +6,21 @@ You've encountered {$fishName}!
 <<set $step to 0>>
 <<set $blubstep = 0>>
 <<declare $tryLeave = 0>>
+<<declare $canBubbleWhatLiesAbove = false>>
 <<jump WhatLiesAboveBattleMenu>>
 ===
 
 title: WhatLiesAboveBattleMenu
 ---
+<<if $step > 0 and $blubstep > 0 and $tryLeave > 0>>
+    <<set $canBubbleWhatLiesAbove = true>>
+<<endif>>
+
 -> TALK <<if $step is 0>>
     <<jump WhatLiesAboveTalk1>>
--> BUBBLE
+-> BUBBLE <<if not $canBubbleWhatLiesAbove>>
+    <<jump WhatLiesAboveBubbleNo>>
+-> [emphasis]BUBBLE[/emphasis] <<if $canBubbleWhatLiesAbove>>
     <<jump WhatLiesAboveBubble>>
 -> BLUB <<if $blubstep is 0 >>
     <<jump WhatLiesAboveBlub>>
@@ -26,12 +33,20 @@ title: WhatLiesAboveTalk1
 ---
 (What would you even say? What would it say back?)
 <<set $step = $step + 1>>
-    <<jump WhatLiesAboveBattleMenu>>
+<<lose_air 2>>
+<<jump WhatLiesAboveBattleMenu>>
 ===
 
 title: WhatLiesAboveBubble
 ---
 You: Everyone! Now! Let's do this!
+<<blow_bubble>>
+===
+
+title: WhatLiesAboveBubbleNo
+---
+(Is there anything else you can do to make this easier?)
+<<lose_air 2>>
 <<jump WhatLiesAboveBattleMenu>>
 ===
 
@@ -39,6 +54,7 @@ title: WhatLiesAboveBlub
 ---
 (There's no water to [emphasis]Blub[/emphasis] with! Now's not the time!)
 <<set $blubstep = $blubstep + 1>>
+<<lose_air 2>>
 <<jump WhatLiesAboveBattleMenu>>
 ===
 
@@ -46,5 +62,6 @@ title: WhatLiesAboveSwimAway
 ---
 (You can't leave! It's now or never!)
 <<set $tryLeave = $tryLeave + 1>>
+<<lose_air 2>>
 <<jump WhatLiesAboveBattleMenu>>
 ===

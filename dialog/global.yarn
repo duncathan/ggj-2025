@@ -1,6 +1,19 @@
 title: Win
 ---
-You win!
+(You recruited them!)
+<<lose_air -100>>
+<<stop>>
+===
+
+title: BubbleFail
+---
+(Your bubble wasn't big enough... come back with more friends.)
+<<stop>>
+===
+
+title: Lose
+---
+(Your air bubble pops! Better try again.)
 <<stop>>
 ===
 

@@ -75,25 +75,26 @@ texture = ExtResource("4_wscv7")
 
 [node name="austere_encounter" parent="." instance=ExtResource("4_pcun8")]
 modulate = Color(0.1947, 0.196955, 0.33, 1)
-position = Vector2(340, 244)
+position = Vector2(1689, 207)
 fish_data = ExtResource("8_w84q1")
 
 [node name="boyfriend_encounter" parent="." instance=ExtResource("4_pcun8")]
 modulate = Color(0.929412, 0.580392, 0.831373, 1)
-position = Vector2(337, 156)
+position = Vector2(2128, 464)
 fish_data = ExtResource("9_ba0ek")
 
 [node name="breath_encounter" parent="." instance=ExtResource("4_pcun8")]
 modulate = Color(1, 0.886275, 0.74902, 1)
-position = Vector2(288, 304)
+position = Vector2(459, 816)
 fish_data = ExtResource("9_mr8ei")
 
 [node name="what_lies_above" parent="." instance=ExtResource("4_pcun8")]
 modulate = Color(0.193963, 0, 0.382813, 1)
-position = Vector2(48, 48)
+position = Vector2(2480, 16)
 fish_data = ExtResource("11_dfwm6")
 
 [node name="DemoLevel" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(1221.31, 721.375)
 scale = Vector2(2.34494, 2.39082)

@@ -8,3 +8,10 @@ title: Leave
 ---
 <<stop>>
 ===
+
+title: GlobalVars
+---
+<<declare $step = 0>>
+<<declare $blubstep = 0>>
+<<declare $fishName = "Breathing Fish">>
+===

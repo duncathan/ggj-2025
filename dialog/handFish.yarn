@@ -1,0 +1,113 @@
+title: StartHandFish
+---
+You've encountered Hand Fish! They have quite the austere appearance. Can't you tell?
+<<set $fishName to "Hand Fish">>
+{$fishName}: Hello.
+<<set $step to 0>>
+<<set $blubstep = 0>>
+<<jump HandFishBattleMenu>>
+===
+
+title: HandFishBattleMenu
+---
+-> > TALK <<if $step is 0>>
+    <<jump HandFishTalk1>>
+-> > TALK <<if $step is 1>>
+    <<jump HandFishTalk2>>
+-> > TALK <<if $step is 2>>
+    <<jump HandFishTalk3>>
+-> > TALK <<if $step is 3>>
+    <<jump HandFishTalk4>>
+-> > TALK <<if $step is 4>>
+    <<jump HandFishTalk5>>    
+-> > BUBBLE
+    <<jump HandFishBubble>>
+-> > BLUB
+    <<jump HandFishBlub>>
+-> > SWIM AWAY
+    <<jump HandFishSwimAway>>
+    
+===
+
+title: HandFishTalk1
+---
+-> > No Nonsense
+    You: Will you come with me, help me get enough strength to contain What Lies Above
+    {$fishName}: Ough, do I have to be that serious too? I don't know...
+    <<lose_air 1>>
+    <<jump HandFishBattleMenu>>
+-> > Hand Pun
+    You: Will you give me a hand in my journey to save the sea and sky?
+    {$fishName}: Ha-ha! Good one! Do another!
+    <<set $step = $step + 1>>
+    <<lose_air 1>>
+    <<jump HandFishBattleMenu>>
+===
+
+title: HandFishTalk2
+---
+-> Hand Pun
+    You: It's time we took matters into our own hands. The situation won't get better on its own.
+    {$fishName}: Yeah! Another!
+    <<set $step = $step + 1>>
+    <<jump HandFishBattleMenu>>
+===
+
+title: HandFishTalk3
+---
+-> Hand Pun
+    You: I've got to hand it to you, your help will be invaluable.
+    {$fishName}: One more!
+    <<set $step = $step + 1>>
+    <<jump HandFishBattleMenu>>
+===
+
+title: HandFishTalk4
+---
+-> Hand Pun
+    You: Without you, I'll definetly be underhanded.
+    {$fishName}: One more!
+    You: You already said one more.
+    {$fishName}: One more for REAL this time!
+    You: Promise?
+    {$fishName}: Promise.
+    <<set $step = $step + 1>>
+    <<jump HandFishBattleMenu>>
+===
+
+title: HandFishTalk5
+---
+-> Hand Pun
+    You: Hand over the goods! The goods being you!
+    {$fishName}: Yes! Okay, you've shown me you can throw hands with the best of 'em. But now you gotta try and bubble ME first!
+    <<set $step = $step + 1>>
+    <<jump HandFishBattleMenu>>
+===
+
+title: HandFishBubble
+---
+{$fishName}: It's all in your hands now.
+<<jump HandFishBattleMenu>>
+===
+
+title: HandFishBlub
+---
+You: Blub blub.
+<<if $blubstep is 0>>
+    {$fishName}: Huh? What are you saying? I'm always ready to lend a hand, but I cant only do that if I can understand you!
+<<elseif $blubstep is 1>>
+    {$fishName}: Cmon, gimme a hand here!
+<<else>>
+    {$fishName}: Sigh, this has gotten out of hand.
+<<endif>>
+<<set $blubstep = $blubstep + 1>>
+<<jump HandFishBattleMenu>>
+===
+
+title: HandFishSwimAway
+---
+You: I can't handle this anymore. 
+{$fishName}: Ha! Maybe another time.
+<<jump Leave>>
+
+===

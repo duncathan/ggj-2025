@@ -137,7 +137,7 @@ offset_bottom = 637.0
 script = ExtResource("5_libje")
 yarnProject = ExtResource("5_m4r5r")
 dialogueViews = [NodePath("../HBoxContainer/LineView"), NodePath("../HBoxContainer/OptionsListView")]
-startNode = "StartBreathingFish"
+startNode = "StartHandFish"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/BattleMenu/MainBox"]
 layout_mode = 2

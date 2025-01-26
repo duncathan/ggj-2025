@@ -1,0 +1,77 @@
+title: StartAustereFish
+---
+You've encountered Austere Fish! They have quite the austere appearance. Can't you tell?
+<<set $fishName to "Austere Fish">>
+{$fishName}: Hello.
+<<set $step to 0>>
+<<set $blubstep = 0>>
+<<jump AustereFishBattleMenu>>
+===
+
+title: AustereFishBattleMenu
+---
+-> > TALK <<if $step is 0>>
+    <<jump AustereFishTalk1>>
+-> > TALK <<if $step is 1>>
+    <<jump AustereFishTalk2>>
+-> > BUBBLE
+    <<jump AustereFishBubble>>
+-> > BLUB
+    <<jump AustereFishBlub>>
+-> > SWIM AWAY
+    <<jump AustereFishSwimAway>>
+    
+===
+
+title: AustereFishTalk1
+---
+-> > Casual
+    You: Hey there, you uh, wanna help me deal with What Lies Above?
+    {$fishName}: Want? No. Will? Undecided.
+    <<lose_air 1>>
+    <<jump AustereFishBattleMenu>>
+-> > Serious
+    You: I'm gathering everyone below to deal with What Lies Above. You're coming with me too.
+    {$fishName}: Direct. I approve. But why will I come?
+    <<set $step = $step + 1>>
+    <<lose_air 1>>
+    <<jump AustereFishBattleMenu>>
+===
+
+title: AustereFishTalk2
+---
+-> Firm
+    You: I need as many below as I can. It's the only way to make a bubble big enough to contain it.
+    {$fishName}: Yes, that makes sense. If you do what you must, then I will come.
+    <<set $step = $step + 1>>
+    <<jump AustereFishBattleMenu>>
+===
+
+
+title: AustereFishBubble
+---
+{$fishName}: Yes. Show your strength.
+<<jump AustereFishBattleMenu>>
+===
+
+title: AustereFishBlub
+---
+You: Blub blub.
+<<if $blubstep is 0>>
+    {$fishName}: Nonsense. Speak Correctly.
+<<elseif $blubstep is 1>>
+    {$fishName}: No? Is it a new language?
+<<else>>
+    {$fishName}: Blub?
+<<endif>>
+<<set $blubstep = $blubstep + 1>>
+<<jump AustereFishBattleMenu>>
+===
+
+title: AustereFishSwimAway
+---
+You: Later.
+{$fishName}: Sooner.
+<<jump Leave>>
+
+===

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishProperties" load_steps=3 format=3 uid="uid://bq5oc47xjvxlx"]
+
+[ext_resource type="Script" path="res://fish_properties.gd" id="1_r11sx"]
+[ext_resource type="Texture2D" uid="uid://cuynvqeec2pic" path="res://assets/battle/fish/austere fish.png" id="2_8gdv2"]
+
+[resource]
+script = ExtResource("1_r11sx")
+texture = ExtResource("2_8gdv2")
+modulate = Color(0.1947, 0.196955, 0.33, 1)
+start_node = "StartAustereFish"
+recruit_id = "Austere"
+return_pos = Vector2(240, 300)

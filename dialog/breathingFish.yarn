@@ -1,0 +1,97 @@
+title: StartBreathingFish
+---
+You've encountered Breathing Fish! They have a bubble over their head, just like you!
+Fish: Oh, hello!
+<<declare $step = 0>>
+<<declare $blubstep = 0>>
+<<declare $fishName = "Breathing Fish">>
+<<jump breathingFishBattleMenu>>
+===
+
+title: breathingFishBattleMenu
+---
+-> > TALK <<if $step is 0>>
+    <<jump BreathingFishTalk1>>
+-> > TALK <<if $step is 1>>
+    <<jump BreathingFishTalk2>>
+-> > BUBBLE
+    <<jump BreathingFishBubble>>
+-> > BLUB
+    <<jump BreathingFishBlub>>
+-> > SWIM AWAY
+    <<jump BreathingFishSwimAway>>
+    
+===
+
+title: BreathingFishTalk1
+---
+-> > Chitchat
+    You: Hey... nice weather we're having? Nice and.. bubbly?
+    {$fishName}: You're terrible at small talk. 
+    {$fishName}: ...You're going, aren't you? You don't have the time.
+    You: Yeah... if I don't...
+    You: What Lies Above will come for everything below.
+    <<set $step = $step + 1>>
+    <<lose_air 1>>
+    <<jump breathingFishBattleMenu>>
+-> > Joke
+    You: Not to burst your bubble, but... I'm leaving.
+    {$fishName}: Har har... I still have enough air for awhile yet.
+    {$fishName}: But you're really doing it now?
+    You: Yup. If i don't go now, What Lies Above will come for everything below.
+    <<set $step = $step + 1>>
+    <<lose_air 1>>
+    <<jump breathingFishBattleMenu>>
+-> > Fond
+    You: Of course you'd be here to see me off.
+    {$fishName}: You're finally going?
+    You: Yup. If i don't go now, What Lies Above will come for everything below.
+    <<set $step = $step + 1>>
+    <<lose_air 1>>
+    <<jump breathingFishBattleMenu>>
+-> > Serious
+    You: I'm finally going out to contain What Lies Above.
+    {$fishName}: No more time left, huh? Now or never.
+    You: Now or never. I wait any longer and it'll come for everything below.
+    <<set $step = $step + 1>>
+    <<lose_air 1>>
+    <<jump breathingFishBattleMenu>>
+===
+
+title: BreathingFishTalk2
+---
+-> Invite
+    You: Would you come with me?
+    {$fishName}: Of course! But you know the drill.
+    You: Yeah.
+    (To prove yourself to your fellows below the sea, you must blow a bubble big enough to capture them! The more companions you already have with you, the bigger fish you can bubble!)
+    <<set $step = $step + 1>>
+    <<jump breathingFishBattleMenu>>
+===
+
+
+title: BreathingFishBubble
+---
+You: Bubble Time.
+<<jump breathingFishBattleMenu>>
+===
+
+title: BreathingFishBlub
+---
+You: Blub blub.
+<<if $blubstep is 0>>
+    {$fishName}: Blub blub! What's that mean?
+<<elseif $blubstep is 1>>
+    {$fishName}: Blub. I guess?
+<<else>>
+    {$fishName}: Hm. Is this how we're spending what little time we have left?
+<<endif>>
+<<set $blubstep = $blubstep + 1>>
+<<jump breathingFishBattleMenu>>
+===
+
+title: BreathingFishSwimAway
+---
+You: I can't leave them behind.
+<<jump breathingFishBattleMenu>>
+===

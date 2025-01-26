@@ -3,7 +3,7 @@ tags:
 position: 0,0
 ---
 Fish: Oh, hello!
-<<jump Menu>>
+<<jump BreathingFish>>
 ===
 
 title: Menu
@@ -25,4 +25,52 @@ position: 0,200
     -> > SWIM AWAY
         Fish: Bye!
         <<jump Leave>>
+===
+
+title:BreathingFish
+position: 200,200
+---
+<<declare $reputation = 0>>
+
+-> > TALK
+    -> > Chitchat
+        You: Hey... nice weather we're having? Nice and.. bubbly?
+        Breathing Fish: You're terrible at small talk. 
+        Breathing Fish: ...You're going, aren't you? You don't have the time.
+        You: Yeah... if I don't...
+        You: What Lies Above will come for everything below.
+        <<jump BreathingFish>>
+        <<lose_air 1>>
+    -> > Joke
+        You: Not to burst your bubble, but... I'm leaving.
+        Breathing Fish: Har har... I still have enough air for awhile yet.
+        Breathing Fish: But you're really doing it now?
+        You: Yup. If i don't go now, What Lies Above will come for everything below.
+        <<jump BreathingFish>>
+        <<lose_air 1>>
+    -> > Fond
+        You: Of course you'd be here to see me off.
+        Breathing Fish: You're finally going?
+        You: Yup. If i don't go now, What Lies Above will come for everything below.
+        <<jump BreathingFish>>
+        <<lose_air 1>>
+    -> > Serious <<if $reputation is 10 >>
+        You: I'm finally going out to contain What Lies Above.
+        Breathing Fish: No more time left, huh? Now or never.
+        You: Now or never. I wait any longer and it'll come for everything below.
+        <<jump BreathingFish>>
+        <<lose_air 1>>
+
+-> > BUBBLE
+    Fish: Ok.
+    <<jump Menu>>
+    <<lose_air 10>>
+-> > BLUB
+    You: Blub.
+    Fish: ???
+    <<jump Menu>>
+    <<lose_air 2>>
+-> > SWIM AWAY
+    Fish: Bye!
+    <<jump Leave>>
 ===

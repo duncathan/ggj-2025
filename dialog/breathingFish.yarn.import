@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://bdiepknv5wb46"
+path="res://.godot/imported/breathingFish.yarn-ecf7561724cea1a7f3b2dfacb3cdc2e9.tres"
+
+[deps]
+
+source_file="res://dialog/breathingFish.yarn"
+dest_files=["res://.godot/imported/breathingFish.yarn-ecf7561724cea1a7f3b2dfacb3cdc2e9.tres"]
+
+[params]
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dotjhq8nq71n0"]
+[gd_scene load_steps=13 format=4 uid="uid://dotjhq8nq71n0"]
 
 [ext_resource type="TileSet" uid="uid://cwsdmcljtjrjg" path="res://assets/playground.tres" id="1_wfj56"]
 [ext_resource type="PackedScene" uid="uid://bl8erfewjd507" path="res://src/Player.tscn" id="2_1pbjj"]
@@ -7,8 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://d1qivyt8pwoxp" path="res://src/bubble_encounter.tscn" id="4_pcun8"]
 [ext_resource type="Texture2D" uid="uid://cpwhhxbt40cvp" path="res://assets/overworld/bck_test_layer0.png" id="4_wscv7"]
 [ext_resource type="Texture2D" uid="uid://qutfm64stka1" path="res://assets/overworld/bck_test_layer1.png" id="5_j4ydb"]
+[ext_resource type="Script" path="res://fish_properties.gd" id="8_poq1j"]
 [ext_resource type="Resource" uid="uid://bq5oc47xjvxlx" path="res://assets/battle/fish/austere.tres" id="8_w84q1"]
 [ext_resource type="Resource" uid="uid://cb73wkmvxpw6h" path="res://assets/battle/fish/breathing.tres" id="9_mr8ei"]
+[ext_resource type="Texture2D" uid="uid://bnhd4y3m8ae7y" path="res://assets/battle/fish/boyfriends.png" id="10_hy680"]
+
+[sub_resource type="Resource" id="Resource_w127y"]
+script = ExtResource("8_poq1j")
+texture = ExtResource("10_hy680")
+modulate = Color(0.929412, 0.580392, 0.831373, 1)
+start_node = "StartBoyfriendFish"
+recruit_id = "Boyfriends"
+return_pos = Vector2(240, 300)
 
 [node name="Level" type="Node2D"]
 
@@ -70,10 +80,14 @@ repeat_times = 3
 texture_filter = 1
 texture = ExtResource("4_wscv7")
 
-[node name="BubbleEncounter2" parent="." instance=ExtResource("4_pcun8")]
+[node name="austere_encounter" parent="." instance=ExtResource("4_pcun8")]
 position = Vector2(340, 244)
 fish_data = ExtResource("8_w84q1")
 
-[node name="BubbleEncounter" parent="." instance=ExtResource("4_pcun8")]
+[node name="boyfriend_encounter" parent="." instance=ExtResource("4_pcun8")]
+position = Vector2(337, 156)
+fish_data = SubResource("Resource_w127y")
+
+[node name="breath_encounter" parent="." instance=ExtResource("4_pcun8")]
 position = Vector2(288, 304)
 fish_data = ExtResource("9_mr8ei")

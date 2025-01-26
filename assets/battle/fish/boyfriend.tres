@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FishProperties" load_steps=3 format=3 uid="uid://cby3xmihe7dpa"]
+[gd_resource type="Resource" script_class="FishProperties" load_steps=3 format=3 uid="uid://c3i32wo3cnd58"]
 
 [ext_resource type="Script" path="res://fish_properties.gd" id="1_n6ggr"]
 [ext_resource type="Texture2D" uid="uid://bnhd4y3m8ae7y" path="res://assets/battle/fish/boyfriends.png" id="2_313v6"]

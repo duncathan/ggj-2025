@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://cg3ju1aj8myrm"
+path="res://.godot/imported/boyfriends.yarn-162b161b3d263561bee41229cde78c13.tres"
+
+[deps]
+
+source_file="res://dialog/boyfriends.yarn"
+dest_files=["res://.godot/imported/boyfriends.yarn-162b161b3d263561bee41229cde78c13.tres"]
+
+[params]
+

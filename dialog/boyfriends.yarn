@@ -1,0 +1,95 @@
+title: StartBoyfriendFish
+---
+<<set $fishName to "Sword Fish">>
+<<declare $fishName2 = "Spear Fish">>
+You've encountered {$fishName}, and {$fishName2}! Is something going on behind that sword?
+{$fishName}: State your business.
+{$fishName}: Or we'll burst your bubble to force you back!
+<<set $step to 0>>
+<<set $blubstep = 0>>
+<<jump BoyfriendFishBattleMenu>>
+===
+
+title: BoyfriendFishBattleMenu
+---
+-> TALK <<if $step is 0>>
+    <<jump BoyfriendFishTalk1>>
+-> TALK <<if $step is 1>>
+    <<jump BoyfriendFishTalk2>>
+-> BUBBLE
+    <<jump BoyfriendFishBubble>>
+-> BLUB
+    <<jump BoyfriendFishBlub>>
+-> SWIM AWAY
+    <<jump BoyfriendFishSwimAway>>
+    
+===
+
+title: BoyfriendFishTalk1
+---
+-> Judgemental
+    You: I know what you're doing back there. Would you cut that out?
+    {$fishName2}: How rude! We're simply minding our own business.
+    {$fishName}: I will certainly cut something if your line of questioning continues!
+    <<lose_air 1>>
+    <<jump BoyfriendFishBattleMenu>>
+-> Fawn
+    You: You two look so cute together!
+    {$fishName}: Cute?! I am the commander of the Fish Navy!
+    {$fishName2}: {$fishName}! It's uh. A compliment.
+    {$fishName}: Hmph. If that was a compliment- it would also be a compliment to say their bubble looks too small!
+    <<lose_air 1>>
+    <<jump BoyfriendFishBattleMenu>>
+-> Direct
+    You: I'd like to request your assistance in my journey. It won't be long before [evil]What Lies Above[/evil] will come for everything below.
+    {$fishName}: That is true. But what makes you think now is the time?
+    {$fishName2}: An excellent report!
+    <<set $step = $step + 1>>
+    <<lose_air 1>>
+    <<jump BoyfriendFishBattleMenu>>
+===
+
+title: BoyfriendFishTalk2
+---
+-> Honest
+    You: I finally started this journey because I was running low on air. I need to try and save the sea and skies just once, and now, this is my only chance.
+    {$fishName2}: And if you're going... everyone should go.
+    {$fishName}: Very well. If you're not too weary from the journey here to perform your duty.
+    <<lose_air 1>>
+    <<set $step = $step + 1>>
+    <<jump BoyfriendFishBattleMenu>>
+===
+
+
+title: BoyfriendFishBubble
+---
+{$fishName}: If you pass, I shall inform the remainder of the Fish Navy.
+{$fishName2}: And I'll tell the rest of the town guards!
+<<jump BoyfriendFishBattleMenu>>
+===
+
+title: BoyfriendFishBlub
+---
+You: Blub blub.
+<<if $blubstep is 0>>
+    {$fishName2}: What are they saying?
+    {$fishName}: Speak up! Speak clearly!
+<<elseif $blubstep is 1>>
+    {$fishName2}: Hm. I think thats how they talk.
+    {$fishName}: It is... quite odd.
+<<else>>
+    {$fishName}: I've never seen a creature make such sounds before.
+    {$fishName2}: Perhaps, just as it came here to make noise, it will soon go away to make noise elsewhere.
+<<endif>>
+<<lose_air 1>>
+<<set $blubstep = $blubstep + 1>>
+<<jump BoyfriendFishBattleMenu>>
+===
+
+title: BoyfriendFishSwimAway
+---
+{$fishName2}: Look! They're leaving!
+{$fishName}: Excellent. We shall resume where we left off.
+<<jump Leave>>
+
+===

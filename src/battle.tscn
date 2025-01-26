@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
 [ext_resource type="Texture2D" uid="uid://d3p8dh5owmvs8" path="res://addons/YarnSpinner-Godot/Textures/NextLineIndicator.png" id="8_ciodu"]
 [ext_resource type="PackedScene" path="res://src/OptionView.tscn" id="8_fqvso"]
-[ext_resource type="Texture2D" uid="uid://dsn23ksnb8cpp" path="res://assets/bubble.png" id="8_rpuuw"]
+[ext_resource type="Texture2D" uid="uid://bg4ii306sp4dy" path="res://assets/battle/bubble indicator.png" id="9_8q6nb"]
 [ext_resource type="Script" path="res://src/continue_button.gd" id="9_eubfb"]
 [ext_resource type="AudioStream" uid="uid://sjn02pa0grje" path="res://assets/music/perchlorate-111365.mp3" id="9_t7d7a"]
 
@@ -264,10 +264,9 @@ offset_bottom = 42.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/BattleMenu/Bubble Counter"]
-layout_mode = 2
-texture = ExtResource("8_rpuuw")
-expand_mode = 2
+[node name="Sprite2D" type="Sprite2D" parent="Control/BattleMenu/Bubble Counter"]
+texture = ExtResource("9_8q6nb")
+offset = Vector2(38, 35)
 
 [node name="BubbleLabel" type="Label" parent="Control/BattleMenu/Bubble Counter"]
 layout_mode = 2

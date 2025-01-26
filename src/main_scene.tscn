@@ -74,24 +74,29 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 0.52549)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainOrPause"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/MainOrPause"]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 0
-offset_left = 954.0
-offset_right = 1180.0
-offset_bottom = 648.0
+offset_left = 899.0
+offset_top = 454.0
+offset_right = 1139.0
+offset_bottom = 630.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainOrPause/MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
 alignment = 2
 
-[node name="PlayLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
+[node name="PlayLbl" type="Button" parent="UI/MainOrPause/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
-mouse_filter = 0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 45
 text = "Play"
-uppercase = true
 script = ExtResource("2_hrskm")
 
-[node name="RePlayLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
+[node name="RePlayLbl" type="Label" parent="UI/MainOrPause/MarginContainer/VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -99,14 +104,12 @@ theme_override_font_sizes/font_size = 45
 text = "Restart"
 uppercase = true
 
-[node name="QuitLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
+[node name="QuitLbl" type="Button" parent="UI/MainOrPause/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
-mouse_filter = 0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 45
 text = "Quit"
-uppercase = true
 script = ExtResource("3_y3oqj")
 
 [node name="TitleLbl" type="Label" parent="UI/MainOrPause"]
@@ -129,5 +132,7 @@ stream = ExtResource("2_61awy")
 autoplay = true
 parameters/looping = true
 
-[connection signal="gui_input" from="UI/MainOrPause/VBoxContainer/PlayLbl" to="UI/MainOrPause/VBoxContainer/PlayLbl" method="_on_gui_input"]
-[connection signal="gui_input" from="UI/MainOrPause/VBoxContainer/QuitLbl" to="UI/MainOrPause/VBoxContainer/QuitLbl" method="_on_gui_input"]
+[connection signal="gui_input" from="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" method="_on_gui_input"]
+[connection signal="pressed" from="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/PlayLbl" method="_on_pressed"]
+[connection signal="gui_input" from="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" method="_on_gui_input"]
+[connection signal="pressed" from="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" to="UI/MainOrPause/MarginContainer/VBoxContainer/QuitLbl" method="_on_pressed"]

@@ -1,4 +1,4 @@
-extends Label
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,4 +13,8 @@ func _process(delta: float) -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):
-		get_tree().quit()
+		pass
+
+
+func _on_pressed() -> void:
+	get_tree().quit()

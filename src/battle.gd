@@ -5,6 +5,8 @@ var fish_sprite: Sprite2D = get_node("Fish")
 @onready
 var dialog_runner: DialogueRunner = get_node("Control/BattleMenu/MainBox/DialogueRunner")
 @onready
+var line_view: LineView = get_node("Control/BattleMenu/MainBox/HBoxContainer/PanelContainer/LineView")
+@onready
 var bubble_label: Label = get_node("Control/BattleMenu/Bubble Counter/BubbleLabel")
 
 var should_reset: bool = true
@@ -45,7 +47,8 @@ func blow_bubble() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("advance_dialog"):
+		self.line_view.UserRequestedViewAdvancement()
 
 
 func _on_dialogue_runner_on_dialogue_complete() -> void:

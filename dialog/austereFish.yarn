@@ -57,13 +57,13 @@ title: AustereFishBubble
 
 title: AustereFishBlub
 ---
-You: Blub blub.
+You: [emphasis]Blub blub.[/emphasis]
 <<if $blubstep is 0>>
     {$fishName}: Nonsense. Speak Correctly.
 <<elseif $blubstep is 1>>
     {$fishName}: No? Is it a new language?
 <<else>>
-    {$fishName}: Blub?
+    {$fishName}: [emphasis]Blub?[/emphasis]
 <<endif>>
 <<lose_air 1>>
 <<set $blubstep = $blubstep + 1>>

@@ -1,15 +1,20 @@
-[gd_scene load_steps=25 format=3 uid="uid://chwjys424hay2"]
+[gd_scene load_steps=37 format=3 uid="uid://chwjys424hay2"]
 
 [ext_resource type="Shader" path="res://assets/Backgrounds.gdshader" id="1_s1x5i"]
 [ext_resource type="Texture2D" uid="uid://tblg4t311vrr" path="res://assets/Circles.png" id="2_b1cri"]
+[ext_resource type="Texture2D" uid="uid://c0xy241wtb0qe" path="res://assets/battle/whatliesabove/maybe_bones.png" id="3_17dde"]
 [ext_resource type="Texture2D" uid="uid://yvsr6qr32p8y" path="res://assets/battle/fish/breathing fish.png" id="3_otfpf"]
+[ext_resource type="Texture2D" uid="uid://0ss2ags4j0vu" path="res://assets/battle/whatliesabove/maybe_eyes.png" id="4_bjh4b"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs" id="4_pd852"]
+[ext_resource type="Texture2D" uid="uid://dcqkfqgaqtflf" path="res://assets/battle/whatliesabove/maybe_arms.png" id="5_ifp7b"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="5_libje"]
 [ext_resource type="Resource" uid="uid://cfrqe2cpus5vm" path="res://dialog/dialog.yarnproject" id="5_m4r5r"]
-[ext_resource type="Resource" path="res://dialog/palette.tres" id="7_7q60n"]
+[ext_resource type="Texture2D" uid="uid://ikwfba11k6wu" path="res://assets/battle/whatliesabove/maybe_face.png" id="6_gncbo"]
+[ext_resource type="Resource" uid="uid://dpirxgodclyxr" path="res://dialog/palette.tres" id="7_7q60n"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
 [ext_resource type="Texture2D" uid="uid://d3p8dh5owmvs8" path="res://addons/YarnSpinner-Godot/Textures/NextLineIndicator.png" id="8_ciodu"]
-[ext_resource type="PackedScene" path="res://src/OptionView.tscn" id="8_fqvso"]
+[ext_resource type="PackedScene" uid="uid://yr71kqjqyxig" path="res://src/OptionView.tscn" id="8_fqvso"]
+[ext_resource type="Texture2D" uid="uid://dsn23ksnb8cpp" path="res://assets/bubble.png" id="8_rpuuw"]
 [ext_resource type="Script" path="res://src/continue_button.gd" id="9_eubfb"]
 [ext_resource type="AudioStream" uid="uid://sjn02pa0grje" path="res://assets/music/perchlorate-111365.mp3" id="9_t7d7a"]
 
@@ -59,13 +64,89 @@ shader_parameter/enable_scan_lines = true
 shader_parameter/palette_speed = 0.1
 shader_parameter/palette = SubResource("GradientTexture1D_3fd6c")
 
-[sub_resource type="Gradient" id="Gradient_q4q25"]
+[sub_resource type="Gradient" id="Gradient_c544l"]
+offsets = PackedFloat32Array(0, 0.509091, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0156863, 0.0156863, 0.0313726, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ckq7b"]
-gradient = SubResource("Gradient_q4q25")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nsgc2"]
+gradient = SubResource("Gradient_c544l")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xjxtp"]
-atlas = SubResource("GradientTexture2D_ckq7b")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ipucv"]
+shader = ExtResource("1_s1x5i")
+shader_parameter/screen_height = 640.0
+shader_parameter/amplitude = 0.25
+shader_parameter/frequency = 10.0
+shader_parameter/speed = 2.0
+shader_parameter/amplitude_vertical = 1.0
+shader_parameter/frequency_vertical = 1.0
+shader_parameter/speed_vertical = 0.1
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = true
+shader_parameter/enable_scan_lines = true
+shader_parameter/palette_speed = 0.3
+shader_parameter/palette = SubResource("GradientTexture1D_nsgc2")
+
+[sub_resource type="Gradient" id="Gradient_vtjlv"]
+offsets = PackedFloat32Array(0, 0.472727, 1)
+colors = PackedColorArray(0.188235, 0, 0.0627451, 1, 0, 0, 0.0627451, 1, 0.188235, 0, 0.0627451, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7gyfh"]
+gradient = SubResource("Gradient_vtjlv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cgtr"]
+shader = ExtResource("1_s1x5i")
+shader_parameter/screen_height = 640.0
+shader_parameter/amplitude = 0.075
+shader_parameter/frequency = 10.0
+shader_parameter/speed = 2.0
+shader_parameter/amplitude_vertical = 0.0
+shader_parameter/frequency_vertical = 0.0
+shader_parameter/speed_vertical = 0.0
+shader_parameter/scroll_direction = Vector2(0.1, 1)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = true
+shader_parameter/enable_scan_lines = true
+shader_parameter/palette_speed = 0.3
+shader_parameter/palette = SubResource("GradientTexture1D_7gyfh")
+
+[sub_resource type="Gradient" id="Gradient_crmu1"]
+offsets = PackedFloat32Array(0, 0.181818, 0.372727, 0.663636, 1)
+colors = PackedColorArray(0.0590244, 0, 0.148438, 1, 0.101563, 0, 0, 1, 0.092076, 0, 0.601563, 1, 0.345098, 0, 0.392157, 1, 0.0588235, 0, 0.14902, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hg5kw"]
+gradient = SubResource("Gradient_crmu1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6xkm"]
+shader = ExtResource("1_s1x5i")
+shader_parameter/screen_height = 640.0
+shader_parameter/amplitude = 0.075
+shader_parameter/frequency = 10.0
+shader_parameter/speed = 2.0
+shader_parameter/amplitude_vertical = 0.2
+shader_parameter/frequency_vertical = 10.0
+shader_parameter/speed_vertical = 0.0
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = true
+shader_parameter/enable_scan_lines = true
+shader_parameter/palette_speed = 0.1
+shader_parameter/palette = SubResource("GradientTexture1D_hg5kw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_reqgp"]
+shader = ExtResource("1_s1x5i")
+shader_parameter/screen_height = 640.0
+shader_parameter/amplitude = 0.035
+shader_parameter/frequency = 10.0
+shader_parameter/speed = 0.1
+shader_parameter/amplitude_vertical = 0.035
+shader_parameter/frequency_vertical = 5.0
+shader_parameter/speed_vertical = 0.2
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = false
+shader_parameter/enable_scan_lines = false
+shader_parameter/palette_speed = 0.1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iyst"]
 texture = ExtResource("8_ciodu")
@@ -105,6 +186,56 @@ texture = ExtResource("2_b1cri")
 expand_mode = 1
 stretch_mode = 1
 
+[node name="evil_background" type="CanvasLayer" parent="."]
+layer = -1
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="evil_background"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0.0941176, 1)
+
+[node name="bones" type="TextureRect" parent="evil_background"]
+material = SubResource("ShaderMaterial_ipucv")
+offset_right = 1155.0
+offset_bottom = 651.0
+texture = ExtResource("3_17dde")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="bg_eyes" type="TextureRect" parent="evil_background"]
+material = SubResource("ShaderMaterial_1cgtr")
+offset_right = 1150.0
+offset_bottom = 651.0
+texture = ExtResource("4_bjh4b")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="arms1" type="TextureRect" parent="evil_background"]
+material = SubResource("ShaderMaterial_v6xkm")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_ifp7b")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="arms2" type="TextureRect" parent="evil_background"]
+material = SubResource("ShaderMaterial_v6xkm")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -354.0
+offset_bottom = 648.0
+grow_horizontal = 0
+texture = ExtResource("5_ifp7b")
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="evil_background"]
+material = SubResource("ShaderMaterial_reqgp")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_gncbo")
+
 [node name="Fish" type="Sprite2D" parent="."]
 modulate = Color(1, 0.8875, 0.75, 1)
 position = Vector2(611, 380)
@@ -133,7 +264,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/BattleMenu/Bubble Counter"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_xjxtp")
+texture = ExtResource("8_rpuuw")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/BattleMenu/Bubble Counter"]

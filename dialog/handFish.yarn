@@ -37,7 +37,7 @@ title: HandFishTalk1
     <<lose_air 1>>
     <<jump HandFishBattleMenu>>
 -> Hand Pun
-    You: Will you give me a hand in my journey to save the sea and sky?
+    You: Will you give me a [emphasis]hand[/emphasis] in my journey to save the sea and sky?
     {$fishName}: Ha-ha! Good one! Do another!
     <<set $step = $step + 1>>
     <<lose_air 1>>
@@ -47,7 +47,7 @@ title: HandFishTalk1
 title: HandFishTalk2
 ---
 -> Hand Pun
-    You: It's time we took matters into our own hands. The situation won't get better on its own.
+    You: It's time we took matters into our own [emphasis]hands[/emphasis]. The situation won't get better on its own.
     {$fishName}: Yeah! Another!
     <<set $step = $step + 1>>
     <<lose_air 1>>
@@ -57,7 +57,7 @@ title: HandFishTalk2
 title: HandFishTalk3
 ---
 -> Hand Pun
-    You: I've got to hand it to you, your help will be invaluable.
+    You: I've got to [emphasis]hand[/emphasis] it to you, your help will be invaluable.
     {$fishName}: One more!
     <<set $step = $step + 1>>
     <<lose_air 1>>
@@ -67,7 +67,7 @@ title: HandFishTalk3
 title: HandFishTalk4
 ---
 -> Hand Pun
-    You: Without you, I'll definetly be underhanded.
+    You: Without you, I'll definetly be under[emphasis]hand[/emphasis]ed.
     {$fishName}: One more!
     You: You already said one more.
     {$fishName}: One more for REAL this time!
@@ -81,8 +81,8 @@ title: HandFishTalk4
 title: HandFishTalk5
 ---
 -> Hand Pun
-    You: Hand over the goods! The goods being you!
-    {$fishName}: Yes! Okay, you've shown me you can throw hands with the best of 'em. But now you gotta try and bubble ME first!
+    You: [emphasis]Hand[/emphasis] over the goods! The goods being you!
+    {$fishName}: Yes! Okay, you've shown me you can throw [emphasis]hands[/emphasis] with the best of 'em. But now you gotta try and bubble ME first!
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump HandFishBattleMenu>>
@@ -90,19 +90,19 @@ title: HandFishTalk5
 
 title: HandFishBubble
 ---
-{$fishName}: It's all in your hands now.
+{$fishName}: It's all in your [emphasis]hands[/emphasis] now.
 <<jump HandFishBattleMenu>>
 ===
 
 title: HandFishBlub
 ---
-You: Blub blub.
+You: [emphasis]Blub blub.[/emphasis]
 <<if $blubstep is 0>>
-    {$fishName}: Huh? What are you saying? I'm always ready to lend a hand, but I cant only do that if I can understand you!
+    {$fishName}: Huh? What are you saying? I'm always ready to lend a [emphasis]hand[/emphasis], but I can only do that if I can understand you!
 <<elseif $blubstep is 1>>
-    {$fishName}: Cmon, gimme a hand here!
+    {$fishName}: Cmon, gimme a [emphasis]hand[/emphasis] here!
 <<else>>
-    {$fishName}: Sigh, this has gotten out of hand.
+    {$fishName}: Sigh, this has gotten out of [emphasis]hand[/emphasis].
 <<endif>>
 <<set $blubstep = $blubstep + 1>>
 <<lose_air 1>>
@@ -111,7 +111,7 @@ You: Blub blub.
 
 title: HandFishSwimAway
 ---
-You: I can't handle this anymore. 
+You: I can't [emphasis]hand[/emphasis]le this anymore. 
 {$fishName}: Ha! Maybe another time.
 <<jump Leave>>
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FishProperties" load_steps=3 format=3 uid="uid://55wuo21rm83u"]
+[gd_resource type="Resource" script_class="FishProperties" load_steps=3 format=3 uid="uid://cb73wkmvxpw6h"]
 
 [ext_resource type="Script" path="res://fish_properties.gd" id="1_8iumi"]
 [ext_resource type="Texture2D" uid="uid://yvsr6qr32p8y" path="res://assets/battle/fish/breathing fish.png" id="2_7xq11"]

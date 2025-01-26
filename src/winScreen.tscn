@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmufdsi2tr02h"]
+
+[ext_resource type="Texture2D" uid="uid://bgqb7eiyex7l4" path="res://assets/battle/whatliesabove/win screen.png" id="1_wge3t"]
+[ext_resource type="AudioStream" uid="uid://2is2icukp00y" path="res://assets/music/hopeful-piano-1-110056.mp3" id="2_0smo0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WinScreen" type="Sprite2D" parent="."]
+position = Vector2(577, 325)
+texture = ExtResource("1_wge3t")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -2.0
+offset_top = 148.0
+offset_right = 1155.0
+offset_bottom = 338.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1150.0
+offset_bottom = 650.0
+theme_override_font_sizes/font_size = 30
+text = "
+With the might of everyone below, you all blow a bubble big enough to contain What Lies Above.
+
+For the first time in a long time, you can all see the sky again, and you need not hide in the depths of the sea anymore.
+
+
+
+
+
+Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0smo0")
+autoplay = true

@@ -2,6 +2,7 @@ extends Node
 
 const battle := preload("res://src/battle.tscn")
 const overworld := preload("res://src/main_scene.tscn")
+const win_screen := preload("res://src/winScreen.tscn")
 
 var current_fish: FishProperties
 
@@ -36,4 +37,7 @@ func leave_battle():
 	if self.bubble_timer > 10:
 		# win the battle
 		self.recruits[self.current_fish.recruit_id] = true
+		if self.current_fish.recruit_id == "WhatLiesAbove":
+			get_tree().call_deferred("change_scene_to_packed", win_screen)
+			return
 	get_tree().call_deferred("change_scene_to_packed", overworld)

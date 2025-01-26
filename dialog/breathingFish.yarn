@@ -64,7 +64,7 @@ title: BreathingFishTalk2
     You: Would you come with me?
     {$fishName}: Of course! But you know the drill.
     You: Yeah.
-    (To prove yourself to your fellows below the sea, you must blow a bubble big enough to capture them! The more companions you already have with you, the bigger fish you can bubble!)
+    (To prove yourself to your fellows below the sea, you must [emphasis]blow a bubble big enough[/emphasis] to capture them! The more companions you already have with you, the bigger fish you can bubble!)
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
@@ -79,11 +79,11 @@ You: Bubble Time.
 
 title: BreathingFishBlub
 ---
-You: Blub blub.
+You: [emphasis]Blub blub.[/emphasis]
 <<if $blubstep is 0>>
-    {$fishName}: Blub blub! What's that mean?
+    {$fishName}: [emphasis]Blub blub![/emphasis] What's that mean?
 <<elseif $blubstep is 1>>
-    {$fishName}: Blub. I guess?
+    {$fishName}: [emphasis]Blub.[/emphasis] I guess?
 <<else>>
     {$fishName}: Hm. Is this how we're spending what little time we have left?
 <<endif>>

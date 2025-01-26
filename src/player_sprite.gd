@@ -17,6 +17,8 @@ func _on_movement_facing_changed(previous: Global.HDirs, new: Global.HDirs) -> v
 
 
 func _on_movement_movement_state_changed(previous: Movement.State, new: Movement.State) -> void:
+	if $bubble != null:
+		$bubble.position.y = -8
 	if new == Movement.State.IDLE:
 		self.animation = "default"
 	elif new in [Movement.State.RUNNING]:
@@ -31,3 +33,5 @@ func _on_movement_movement_state_changed(previous: Movement.State, new: Movement
 			self.play("swim_left")
 	elif new == Movement.State.FAST_FALLING:
 		self.animation = "dive"
+		if $bubble != null:
+			$bubble.position.y = 11

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bl8erfewjd507"]
+[gd_scene load_steps=29 format=3 uid="uid://bl8erfewjd507"]
 
 [ext_resource type="Script" path="res://src/scripts/player_controls.gd" id="1_bppwm"]
 [ext_resource type="Script" path="res://src/player.gd" id="1_q8e7w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://src/scripts/PhysicsAttributes.gd" id="2_j8414"]
 [ext_resource type="Texture2D" uid="uid://d5ll536er2cf" path="res://assets/overworld/annie.png" id="4_v4y20"]
 [ext_resource type="Script" path="res://src/player_sprite.gd" id="5_1d0qt"]
+[ext_resource type="Texture2D" uid="uid://02bsb3gys1lv" path="res://assets/overworld/bubbleHelment.png" id="7_byut7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlqec"]
 size = Vector2(18, 28)
@@ -201,8 +202,11 @@ script = ExtResource("1_bppwm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_w5fwd")
-animation = &"walk_left"
 script = ExtResource("5_1d0qt")
+
+[node name="bubble" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -8)
+texture = ExtResource("7_byut7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

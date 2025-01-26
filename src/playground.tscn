@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dotjhq8nq71n0"]
+[gd_scene load_steps=17 format=4 uid="uid://dotjhq8nq71n0"]
 
 [ext_resource type="TileSet" uid="uid://cwsdmcljtjrjg" path="res://assets/playground.tres" id="1_wfj56"]
 [ext_resource type="PackedScene" uid="uid://bl8erfewjd507" path="res://src/Player.tscn" id="2_1pbjj"]
@@ -7,12 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://d1qivyt8pwoxp" path="res://src/bubble_encounter.tscn" id="4_pcun8"]
 [ext_resource type="Texture2D" uid="uid://cpwhhxbt40cvp" path="res://assets/overworld/bck_test_layer0.png" id="4_wscv7"]
 [ext_resource type="Texture2D" uid="uid://qutfm64stka1" path="res://assets/overworld/bck_test_layer1.png" id="5_j4ydb"]
-[ext_resource type="Resource" uid="uid://bq5oc47xjvxlx" path="res://assets/battle/fish/austere.tres" id="8_w84q1"]
-[ext_resource type="Resource" uid="uid://cby3xmihe7dpa" path="res://assets/battle/fish/boyfriend.tres" id="9_ba0ek"]
-[ext_resource type="Resource" uid="uid://cb73wkmvxpw6h" path="res://assets/battle/fish/breathing.tres" id="9_mr8ei"]
+[ext_resource type="Resource" uid="uid://bewclxli5ddc2" path="res://assets/battle/fish/austere.tres" id="8_w84q1"]
+[ext_resource type="Resource" uid="uid://c3i32wo3cnd58" path="res://assets/battle/fish/boyfriend.tres" id="9_ba0ek"]
+[ext_resource type="Resource" uid="uid://55wuo21rm83u" path="res://assets/battle/fish/breathing.tres" id="9_mr8ei"]
 [ext_resource type="Resource" uid="uid://d3y4wo0ofsl1j" path="res://assets/battle/fish/hand.tres" id="11_35nei"]
-[ext_resource type="Resource" uid="uid://cqiyi5xe7jkqv" path="res://assets/battle/whatliesabove/properties.tres" id="11_dfwm6"]
+[ext_resource type="Resource" uid="uid://cpeq3q6djoftg" path="res://assets/battle/whatliesabove/properties.tres" id="11_dfwm6"]
 [ext_resource type="Texture2D" uid="uid://cciyb0jrwkj53" path="res://assets/overworld/demo_level.png" id="12_ck8au"]
+[ext_resource type="Texture2D" uid="uid://b2vui0mlluiha" path="res://assets/overworld/coral_0.png" id="14_82tcx"]
+[ext_resource type="Texture2D" uid="uid://brch7u4vuym1i" path="res://assets/overworld/coral_1.png" id="15_vvmba"]
+[ext_resource type="Texture2D" uid="uid://hu37wrtrl2ax" path="res://assets/overworld/coral_2.png" id="16_ya645"]
 
 [node name="Level" type="Node2D"]
 
@@ -101,3 +104,163 @@ z_index = -1
 position = Vector2(1221.31, 721.375)
 scale = Vector2(2.34494, 2.39082)
 texture = ExtResource("12_ck8au")
+
+[node name="ForegroundLayers" type="Node2D" parent="."]
+z_index = 1
+
+[node name="coral" type="Node2D" parent="ForegroundLayers"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(287, 140)
+texture = ExtResource("14_82tcx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(437, 363)
+texture = ExtResource("14_82tcx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(442, 716)
+texture = ExtResource("14_82tcx")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1429, 525)
+texture = ExtResource("14_82tcx")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1894, 559)
+texture = ExtResource("14_82tcx")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1459, 874)
+texture = ExtResource("14_82tcx")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(143, 811)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(396, 360)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(281, 813)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(859, 875)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1564, 873)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1611, 717)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(2240, 587)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D14" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1763, 203)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D15" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(2064, 268)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D16" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1123, 264)
+texture = ExtResource("15_vvmba")
+
+[node name="Sprite2D18" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(965, 269)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D20" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1170, 687)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D21" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(567, 847)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D22" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(335, 812)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D23" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1170, 875)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D24" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1593, 874)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D25" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(2017, 743)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D26" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(2493, 746)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D27" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1649, 714)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D28" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(2093, 587)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D29" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1716, 393)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D30" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1473, 332)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D31" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(1317, 523)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D19" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(69, 202)
+texture = ExtResource("16_ya645")
+
+[node name="Sprite2D17" type="Sprite2D" parent="ForegroundLayers/coral"]
+texture_filter = 1
+position = Vector2(779, 457)
+texture = ExtResource("15_vvmba")

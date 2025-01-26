@@ -17,4 +17,6 @@ func _on_gui_input(event: InputEvent) -> void:
 
 
 func _on_pressed() -> void:
+	$"../../../../../AudioStreamPlayer2".play()
+	await get_tree().create_timer(0.2).timeout
 	get_tree().quit()

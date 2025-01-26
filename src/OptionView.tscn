@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://yr71kqjqyxig"]
+[gd_scene load_steps=8 format=3 uid="uid://c60i1mx1ecq7q"]
 
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionView.cs" id="1_6gciw"]
+[ext_resource type="AudioStream" uid="uid://blv5jld36655e" path="res://assets/music/infographic-pop-4-197870.mp3" id="2_cfx8s"]
+[ext_resource type="AudioStream" uid="uid://w52as3h2nhxa" path="res://assets/music/infographic-pop-6-197873.mp3" id="3_3rwiq"]
+[ext_resource type="AudioStream" uid="uid://cbjc81g0ttucn" path="res://assets/music/infographic-pop-7-197874.mp3" id="4_x8a8i"]
+[ext_resource type="AudioStream" uid="uid://c3d6ggngf2o4j" path="res://assets/music/infographic-pop-8-197875.mp3" id="5_ermnh"]
+[ext_resource type="Script" path="res://src/audio_stream_player.gd" id="6_r3cbn"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sopjm"]
+streams_count = 4
+stream_0/stream = ExtResource("2_cfx8s")
+stream_1/stream = ExtResource("3_3rwiq")
+stream_2/stream = ExtResource("4_x8a8i")
+stream_3/stream = ExtResource("5_ermnh")
 
 [node name="OptionView" type="Button" node_paths=PackedStringArray("label")]
 custom_minimum_size = Vector2(0, 26)
@@ -43,3 +55,9 @@ bbcode_enabled = true
 text = "[center]Option View[/center]"
 fit_content = true
 scroll_active = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_sopjm")
+script = ExtResource("6_r3cbn")
+
+[connection signal="pressed" from="." to="AudioStreamPlayer" method="_on_option_view_pressed"]

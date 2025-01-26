@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://chwjys424hay2"]
+[gd_scene load_steps=20 format=3 uid="uid://chwjys424hay2"]
 
 [ext_resource type="Texture2D" uid="uid://ca2rrknxunvo2" path="res://assets/fish.png" id="1_qai7q"]
 [ext_resource type="Shader" path="res://assets/Backgrounds.gdshader" id="1_s1x5i"]
@@ -6,8 +6,9 @@
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs" id="4_pd852"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="5_libje"]
 [ext_resource type="Resource" uid="uid://cfrqe2cpus5vm" path="res://dialog/dialog.yarnproject" id="5_m4r5r"]
+[ext_resource type="Resource" uid="uid://dpirxgodclyxr" path="res://dialog/palette.tres" id="7_7q60n"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
-[ext_resource type="PackedScene" path="res://src/OptionView.tscn" id="8_fqvso"]
+[ext_resource type="PackedScene" uid="uid://yr71kqjqyxig" path="res://src/OptionView.tscn" id="8_fqvso"]
 [ext_resource type="AudioStream" uid="uid://sjn02pa0grje" path="res://assets/music/perchlorate-111365.mp3" id="9_t7d7a"]
 
 [sub_resource type="Gradient" id="Gradient_posyk"]
@@ -150,6 +151,7 @@ script = ExtResource("4_pd852")
 viewControlPath = NodePath("Control")
 lineTextPath = NodePath("Label")
 typewriterEffectSpeed = 100.0
+palette = ExtResource("7_7q60n")
 autoAdvance = true
 
 [node name="Label" type="RichTextLabel" parent="Control/BattleMenu/MainBox/HBoxContainer/LineView"]
@@ -169,6 +171,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 script = ExtResource("7_cb5j0")
 optionViewPrefab = ExtResource("8_fqvso")
+palette = ExtResource("7_7q60n")
 lastLineText = NodePath("../LineView/Label")
 viewControl = NodePath("Control")
 boxContainer = NodePath("Control/VBoxContainer")

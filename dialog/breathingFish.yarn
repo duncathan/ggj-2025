@@ -30,7 +30,7 @@ title: BreathingFishTalk1
     {$fishName}: You're terrible at small talk. 
     {$fishName}: ...You're going, aren't you? You don't have the time.
     You: Yeah... if I don't...
-    You: What Lies Above will come for everything below.
+    You: [evil]What Lies Above[/evil] will come for everything below.
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>

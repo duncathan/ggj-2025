@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://cydn7dgvasinf"
+path="res://.godot/imported/handFish.yarn-249c4e0f4a143bb1b743a4a2de1c3cd8.tres"
+
+[deps]
+
+source_file="res://dialog/handFish.yarn"
+dest_files=["res://.godot/imported/handFish.yarn-249c4e0f4a143bb1b743a4a2de1c3cd8.tres"]
+
+[params]
+

@@ -1,10 +1,10 @@
 title: StartBreathingFish
 ---
-You've encountered Breathing Fish! They have a bubble over their head, just like you!
-Fish: Oh, hello!
-<<declare $step = 0>>
-<<declare $blubstep = 0>>
-<<declare $fishName = "Breathing Fish">>
+<<set $fishName to "Breathing Fish">>
+You've encountered {$fishName}! They have a bubble over their head, just like you!
+{$fishName}: Oh, hello!
+<<set $step to 0>>
+<<set $blubstep to 0>>
 <<jump breathingFishBattleMenu>>
 ===
 

@@ -10,8 +10,3 @@ Perchlorate - Music byDSTechnician
 Dark piano ambient - Music by LFC Records
 
 Hopeful piano - Music by Anastasia Kir
-
-
-Unused
-Zen dub - Music by Jerome Chauvel
-Solitude - Music by Luca Francini

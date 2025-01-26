@@ -46,7 +46,7 @@ title: BoyfriendFishTalk1
 -> Direct
     You: I'd like to request your assistance in my journey. It won't be long before [evil]What Lies Above[/evil] will come for everything below.
     {$fishName}: That is true. But what makes you think now is the time?
-    {$fishName2}: An excellent report!
+    {$fishName2}: (An excellent report!)
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump BoyfriendFishBattleMenu>>

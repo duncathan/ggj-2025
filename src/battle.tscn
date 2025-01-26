@@ -11,10 +11,10 @@
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="5_libje"]
 [ext_resource type="Resource" uid="uid://cfrqe2cpus5vm" path="res://dialog/dialog.yarnproject" id="5_m4r5r"]
 [ext_resource type="Texture2D" uid="uid://ikwfba11k6wu" path="res://assets/battle/whatliesabove/maybe_face.png" id="6_gncbo"]
-[ext_resource type="Resource" uid="uid://dpirxgodclyxr" path="res://dialog/palette.tres" id="7_7q60n"]
+[ext_resource type="Resource" path="res://dialog/palette.tres" id="7_7q60n"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
 [ext_resource type="Texture2D" uid="uid://d3p8dh5owmvs8" path="res://addons/YarnSpinner-Godot/Textures/NextLineIndicator.png" id="8_ciodu"]
-[ext_resource type="PackedScene" uid="uid://yr71kqjqyxig" path="res://src/OptionView.tscn" id="8_fqvso"]
+[ext_resource type="PackedScene" path="res://src/OptionView.tscn" id="8_fqvso"]
 [ext_resource type="Texture2D" uid="uid://dsn23ksnb8cpp" path="res://assets/bubble.png" id="8_rpuuw"]
 [ext_resource type="Script" path="res://src/continue_button.gd" id="9_eubfb"]
 [ext_resource type="AudioStream" uid="uid://sjn02pa0grje" path="res://assets/music/perchlorate-111365.mp3" id="9_t7d7a"]
@@ -190,7 +190,6 @@ stretch_mode = 1
 
 [node name="evil_background" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="evil_background"]
 offset_right = 1152.0
@@ -239,6 +238,7 @@ offset_bottom = 40.0
 texture = ExtResource("6_gncbo")
 
 [node name="Fish" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 0.8875, 0.75, 1)
 position = Vector2(611, 380)
 texture = ExtResource("3_otfpf")
@@ -285,7 +285,7 @@ offset_bottom = 620.0
 script = ExtResource("5_libje")
 yarnProject = ExtResource("5_m4r5r")
 dialogueViews = [NodePath("../HBoxContainer/PanelContainer/LineView"), NodePath("../HBoxContainer/PanelContainer2/OptionsListView")]
-startNode = "StartBreathingFish"
+startNode = "StartWhatLiesAbove"
 startAutomatically = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/BattleMenu/MainBox"]

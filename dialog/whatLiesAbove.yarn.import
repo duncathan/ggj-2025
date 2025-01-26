@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://22ik5tsbkyvb"
+path="res://.godot/imported/whatLiesAbove.yarn-5c0bc85a27c1088027317d873cdb69cd.tres"
+
+[deps]
+
+source_file="res://dialog/whatLiesAbove.yarn"
+dest_files=["res://.godot/imported/whatLiesAbove.yarn-5c0bc85a27c1088027317d873cdb69cd.tres"]
+
+[params]
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmufdsi2tr02h"]
+[gd_scene load_steps=3 format=3 uid="uid://dene3shsq1jph"]
 
 [ext_resource type="Texture2D" uid="uid://bgqb7eiyex7l4" path="res://assets/battle/whatliesabove/win screen.png" id="1_wge3t"]
 [ext_resource type="AudioStream" uid="uid://2is2icukp00y" path="res://assets/music/hopeful-piano-1-110056.mp3" id="2_0smo0"]
@@ -36,3 +36,47 @@ autowrap_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0smo0")
 autoplay = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 528.0
+offset_right = 1152.0
+offset_bottom = 640.0
+theme_override_constants/separation = 27
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 63
+alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Code: [color=#ed94d4]Dunc[/color]"
+fit_content = true
+
+[node name="Label2" type="RichTextLabel" parent="HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Art: [color=#ffa8d9]Emma[/color]"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Label3" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(485, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Writing/Level Design: [color=#e34234]Daniel[/color]"
+fit_content = true

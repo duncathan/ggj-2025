@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bl8erfewjd507" path="res://src/Player.tscn" id="2_1pbjj"]
 [ext_resource type="Texture2D" uid="uid://obegryj1gm1k" path="res://assets/overworld/bck_test_layer3.png" id="3_0w7fu"]
 [ext_resource type="Texture2D" uid="uid://c5x0q2f6xlrxi" path="res://assets/overworld/bck_test_layer2.png" id="4_58eol"]
-[ext_resource type="PackedScene" uid="uid://d1qivyt8pwoxp" path="res://src/bubble_encounter.tscn" id="4_pcun8"]
+[ext_resource type="PackedScene" path="res://src/bubble_encounter.tscn" id="4_pcun8"]
 [ext_resource type="Texture2D" uid="uid://cpwhhxbt40cvp" path="res://assets/overworld/bck_test_layer0.png" id="4_wscv7"]
 [ext_resource type="Texture2D" uid="uid://qutfm64stka1" path="res://assets/overworld/bck_test_layer1.png" id="5_j4ydb"]
 [ext_resource type="Resource" path="res://assets/battle/fish/austere.tres" id="8_w84q1"]
@@ -73,17 +73,21 @@ texture_filter = 1
 texture = ExtResource("4_wscv7")
 
 [node name="austere_encounter" parent="." instance=ExtResource("4_pcun8")]
+modulate = Color(0.1947, 0.196955, 0.33, 1)
 position = Vector2(340, 244)
 fish_data = ExtResource("8_w84q1")
 
 [node name="boyfriend_encounter" parent="." instance=ExtResource("4_pcun8")]
+modulate = Color(0.929412, 0.580392, 0.831373, 1)
 position = Vector2(337, 156)
 fish_data = ExtResource("9_ba0ek")
 
 [node name="breath_encounter" parent="." instance=ExtResource("4_pcun8")]
+modulate = Color(1, 0.886275, 0.74902, 1)
 position = Vector2(288, 304)
 fish_data = ExtResource("9_mr8ei")
 
 [node name="what_lies_above" parent="." instance=ExtResource("4_pcun8")]
+modulate = Color(0.193963, 0, 0.382813, 1)
 position = Vector2(48, 48)
 fish_data = ExtResource("11_dfwm6")

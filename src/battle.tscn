@@ -190,6 +190,7 @@ stretch_mode = 1
 
 [node name="evil_background" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="evil_background"]
 offset_right = 1152.0
@@ -238,7 +239,6 @@ offset_bottom = 40.0
 texture = ExtResource("6_gncbo")
 
 [node name="Fish" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(1, 0.8875, 0.75, 1)
 position = Vector2(611, 380)
 texture = ExtResource("3_otfpf")

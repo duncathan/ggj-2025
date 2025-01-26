@@ -7,6 +7,8 @@ var current_fish: FishProperties
 
 var return_pos = null
 
+var game_started = false
+
 var recruits: Dictionary = {
 	"Breathing": false,
 	"Austere": false,
@@ -14,6 +16,13 @@ var recruits: Dictionary = {
 	"Boyfriends": false,
 	"WhatLiesAbove": false,
 }
+
+func total_recruits() -> int:
+	var i := 0
+	for x in recruits.values():
+		if x:
+			i += 1
+	return i
 
 var bubble_timer := 10
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq46dufukqxoy"]
+[gd_scene load_steps=8 format=3 uid="uid://cq46dufukqxoy"]
 
 [ext_resource type="PackedScene" uid="uid://dotjhq8nq71n0" path="res://src/playground.tscn" id="1_gcpyr"]
 [ext_resource type="AudioStream" uid="uid://l62ighcivil3" path="res://assets/music/mercury-ambient-electronica-275400.mp3" id="2_61awy"]
+[ext_resource type="Script" path="res://src/play_lbl.gd" id="2_hrskm"]
+[ext_resource type="Script" path="res://src/quit_lbl.gd" id="3_y3oqj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na3r1"]
 corner_radius_top_left = 5
@@ -28,6 +30,7 @@ render_target_update_mode = 4
 [node name="Level" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_gcpyr")]
 
 [node name="UI" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 3
@@ -81,9 +84,12 @@ alignment = 2
 [node name="PlayLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 45
 text = "Play"
 uppercase = true
+script = ExtResource("2_hrskm")
 
 [node name="RePlayLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
 visible = false
@@ -96,9 +102,12 @@ uppercase = true
 [node name="QuitLbl" type="Label" parent="UI/MainOrPause/VBoxContainer"]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 45
 text = "Quit"
 uppercase = true
+script = ExtResource("3_y3oqj")
 
 [node name="TitleLbl" type="Label" parent="UI/MainOrPause"]
 custom_minimum_size = Vector2(1000, 500)
@@ -119,3 +128,6 @@ vertical_alignment = 1
 stream = ExtResource("2_61awy")
 autoplay = true
 parameters/looping = true
+
+[connection signal="gui_input" from="UI/MainOrPause/VBoxContainer/PlayLbl" to="UI/MainOrPause/VBoxContainer/PlayLbl" method="_on_gui_input"]
+[connection signal="gui_input" from="UI/MainOrPause/VBoxContainer/QuitLbl" to="UI/MainOrPause/VBoxContainer/QuitLbl" method="_on_gui_input"]

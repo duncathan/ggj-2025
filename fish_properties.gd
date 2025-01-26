@@ -16,3 +16,6 @@ var recruit_id: String
 
 @export
 var return_pos: Vector2
+
+@export
+var need_recruits: int = 0

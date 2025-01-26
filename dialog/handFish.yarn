@@ -5,6 +5,7 @@ You've encountered {$fishName}! Maybe the two of you can shake on a deal?
 {$fishName}: Oh, hey there!
 <<set $step to 0>>
 <<set $blubstep = 0>>
+<<declare $canBubbleHand = false>>
 <<jump HandFishBattleMenu>>
 ===
 
@@ -20,7 +21,9 @@ title: HandFishBattleMenu
     <<jump HandFishTalk4>>
 -> TALK <<if $step is 4>>
     <<jump HandFishTalk5>>    
--> BUBBLE
+-> BUBBLE <<if not $canBubbleHand>>
+    <<jump HandFishBubbleNo>>
+-> [emphasis]BUBBLE[/emphasis] <<if $canBubbleHand>>
     <<jump HandFishBubble>>
 -> BLUB
     <<jump HandFishBlub>>
@@ -85,12 +88,20 @@ title: HandFishTalk5
     {$fishName}: Yes! Okay, you've shown me you can throw [emphasis]hands[/emphasis] with the best of 'em. But now you gotta try and bubble ME first!
     <<set $step = $step + 1>>
     <<lose_air 1>>
+    <<set $canBubbleHand = true>>
     <<jump HandFishBattleMenu>>
 ===
 
 title: HandFishBubble
 ---
 {$fishName}: It's all in your [emphasis]hands[/emphasis] now.
+<<blow_bubble>>
+===
+
+title: HandFishBubbleNo
+---
+(They don't seem convinced.)
+<<lose_air 1>>
 <<jump HandFishBattleMenu>>
 ===
 

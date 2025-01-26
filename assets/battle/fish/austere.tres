@@ -10,3 +10,4 @@ modulate = Color(0.1947, 0.196955, 0.33, 1)
 start_node = "StartAustereFish"
 recruit_id = "Austere"
 return_pos = Vector2(1735, 209)
+need_recruits = 1

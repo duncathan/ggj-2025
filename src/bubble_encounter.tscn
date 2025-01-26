@@ -10,6 +10,7 @@ modulate = Color(1, 1, 1, 1)
 start_node = ""
 recruit_id = ""
 return_pos = Vector2(0, 0)
+need_recruits = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktwou"]
 size = Vector2(32, 32)

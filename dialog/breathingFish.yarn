@@ -5,6 +5,7 @@ You've encountered {$fishName}! They have a bubble over their head, just like yo
 {$fishName}: Oh, hello!
 <<set $step to 0>>
 <<set $blubstep to 0>>
+<<declare $canBubbleBreathing = false>>
 <<jump breathingFishBattleMenu>>
 ===
 
@@ -14,7 +15,9 @@ title: breathingFishBattleMenu
     <<jump BreathingFishTalk1>>
 -> TALK <<if $step is 1>>
     <<jump BreathingFishTalk2>>
--> BUBBLE
+-> BUBBLE <<if not $canBubbleBreathing>>
+    <<jump BreathingFishBubbleNo>>
+-> [emphasis]BUBBLE[/emphasis] <<if $canBubbleBreathing>>
     <<jump BreathingFishBubble>>
 -> BLUB
     <<jump BreathingFishBlub>>
@@ -66,15 +69,23 @@ title: BreathingFishTalk2
     You: Yeah.
     (To prove yourself to your fellows below the sea, you must [emphasis]blow a bubble big enough[/emphasis] to capture them! The more companions you already have with you, the bigger fish you can bubble!)
     <<set $step = $step + 1>>
+    <<set $canBubbleBreathing = true>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
 ===
 
 
+title: BreathingFishBubbleNo
+---
+(They don't seem convinced.)
+<<lose_air 1>>
+<<jump breathingFishBattleMenu>>
+===
+
 title: BreathingFishBubble
 ---
-You: Bubble Time.
-<<jump breathingFishBattleMenu>>
+You: Bubble time.
+<<blow_bubble>>
 ===
 
 title: BreathingFishBlub

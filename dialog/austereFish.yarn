@@ -5,6 +5,7 @@ You've encountered {$fishName}! They have quite the austere appearance. Can't yo
 {$fishName}: Hello.
 <<set $step to 0>>
 <<set $blubstep = 0>>
+<<declare $canBubbleAustere = false>>
 <<jump AustereFishBattleMenu>>
 ===
 
@@ -14,7 +15,9 @@ title: AustereFishBattleMenu
     <<jump AustereFishTalk1>>
 -> TALK <<if $step is 1>>
     <<jump AustereFishTalk2>>
--> BUBBLE
+-> BUBBLE <<if not $canBubbleAustere>>
+    <<jump AustereFishBubbleNo>>
+-> [emphasis]BUBBLE[/emphasis] <<if $canBubbleAustere>>
     <<jump AustereFishBubble>>
 -> BLUB
     <<jump AustereFishBlub>>
@@ -45,14 +48,21 @@ title: AustereFishTalk2
     {$fishName}: Yes, that makes sense. If you do what you must, then I will come.
     <<lose_air 1>>
     <<set $step = $step + 1>>
+    <<set $canBubbleAustere = true>>
     <<jump AustereFishBattleMenu>>
 ===
 
+title: AustereFishBubbleNo
+---
+(They don't seem convinced.)
+<<lose_air 1>>
+<<jump AustereFishBattleMenu>>
+===
 
 title: AustereFishBubble
 ---
 {$fishName}: Yes. Show your strength.
-<<jump AustereFishBattleMenu>>
+<<blow_bubble>>
 ===
 
 title: AustereFishBlub

@@ -7,6 +7,7 @@ You've encountered {$fishName}, and {$fishName2}! Is something going on behind t
 {$fishName}: Or we'll burst your bubble to force you back!
 <<set $step to 0>>
 <<set $blubstep = 0>>
+<<declare $canBubbleBoyfriends = false>>
 <<jump BoyfriendFishBattleMenu>>
 ===
 
@@ -16,7 +17,9 @@ title: BoyfriendFishBattleMenu
     <<jump BoyfriendFishTalk1>>
 -> TALK <<if $step is 1>>
     <<jump BoyfriendFishTalk2>>
--> BUBBLE
+-> BUBBLE <<if not $canBubbleBoyfriends>>
+    <<jump BoyfriendFishBubbleNo>>
+-> [emphasis]BUBBLE[/emphasis] <<if $canBubbleBoyfriends>>
     <<jump BoyfriendFishBubble>>
 -> BLUB
     <<jump BoyfriendFishBlub>>
@@ -57,15 +60,22 @@ title: BoyfriendFishTalk2
     {$fishName}: Very well. If you're not too weary from the journey here to perform your duty.
     <<lose_air 1>>
     <<set $step = $step + 1>>
+    <<set $canBubbleBoyfriends = true>>
     <<jump BoyfriendFishBattleMenu>>
 ===
 
+title: BoyfriendFishBubbleNo
+---
+(They don't seem convinced.)
+<<lose_air 1>>
+<<jump BoyfriendFishBattleMenu>>
+===
 
 title: BoyfriendFishBubble
 ---
 {$fishName}: If you pass, I shall inform the remainder of the Fish Navy.
 {$fishName2}: And I'll tell the rest of the town guards!
-<<jump BoyfriendFishBattleMenu>>
+<<blow_bubble>>
 ===
 
 title: BoyfriendFishBlub

@@ -7,6 +7,8 @@ var current_fish: FishProperties
 
 var return_pos = null
 
+var game_started = false
+
 var recruits: Dictionary = {
 	"Breathing": false,
 	"Austere": false,

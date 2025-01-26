@@ -90,6 +90,7 @@ position = Vector2(464, 816)
 fish_data = ExtResource("9_mr8ei")
 
 [node name="hand_encounter" parent="." instance=ExtResource("4_pcun8")]
+modulate = Color(0.437393, 0.585938, 0.446529, 1)
 position = Vector2(1056, 272)
 fish_data = ExtResource("11_35nei")
 

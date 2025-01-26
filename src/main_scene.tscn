@@ -62,7 +62,6 @@ texture = SubResource("GradientTexture2D_oh4fj")
 expand_mode = 5
 
 [node name="MainOrPause" type="Control" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 0
 
@@ -101,15 +100,19 @@ theme_override_font_sizes/font_size = 45
 text = "Quit"
 uppercase = true
 
-[node name="Label" type="Label" parent="UI/MainOrPause"]
-custom_minimum_size = Vector2(1000, 600)
+[node name="TitleLbl" type="Label" parent="UI/MainOrPause"]
+custom_minimum_size = Vector2(1000, 500)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 30
-text = "Your bubble popped!
-What Lies Above will now surely consume the ocean, too, in time..."
-horizontal_alignment = 1
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 1018.0
+offset_bottom = 603.0
+theme_override_colors/font_color = Color(0.517647, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 140
+text = "What Lies 
+Above"
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

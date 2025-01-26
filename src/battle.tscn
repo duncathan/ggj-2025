@@ -1,14 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://chwjys424hay2"]
+[gd_scene load_steps=25 format=3 uid="uid://chwjys424hay2"]
 
 [ext_resource type="Shader" path="res://assets/Backgrounds.gdshader" id="1_s1x5i"]
 [ext_resource type="Texture2D" uid="uid://tblg4t311vrr" path="res://assets/Circles.png" id="2_b1cri"]
-[ext_resource type="Texture2D" uid="uid://cuynvqeec2pic" path="res://assets/battle/fish/austere fish.png" id="3_hruql"]
+[ext_resource type="Texture2D" uid="uid://yvsr6qr32p8y" path="res://assets/battle/fish/breathing fish.png" id="3_otfpf"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs" id="4_pd852"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="5_libje"]
 [ext_resource type="Resource" uid="uid://cfrqe2cpus5vm" path="res://dialog/dialog.yarnproject" id="5_m4r5r"]
-[ext_resource type="Resource" path="res://dialog/palette.tres" id="7_7q60n"]
+[ext_resource type="Resource" uid="uid://dpirxgodclyxr" path="res://dialog/palette.tres" id="7_7q60n"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
-[ext_resource type="PackedScene" path="res://src/OptionView.tscn" id="8_fqvso"]
+[ext_resource type="Texture2D" uid="uid://d3p8dh5owmvs8" path="res://addons/YarnSpinner-Godot/Textures/NextLineIndicator.png" id="8_ciodu"]
+[ext_resource type="PackedScene" uid="uid://yr71kqjqyxig" path="res://src/OptionView.tscn" id="8_fqvso"]
+[ext_resource type="Script" path="res://src/continue_button.gd" id="9_eubfb"]
 [ext_resource type="AudioStream" uid="uid://sjn02pa0grje" path="res://assets/music/perchlorate-111365.mp3" id="9_t7d7a"]
 
 [sub_resource type="Gradient" id="Gradient_posyk"]
@@ -65,6 +67,18 @@ gradient = SubResource("Gradient_q4q25")
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjxtp"]
 atlas = SubResource("GradientTexture2D_ckq7b")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iyst"]
+texture = ExtResource("8_ciodu")
+modulate_color = Color(0.658824, 0.941176, 0.917647, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1svw"]
+texture = ExtResource("8_ciodu")
+modulate_color = Color(0.356863, 0.529412, 0.501961, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s10xe"]
+texture = ExtResource("8_ciodu")
+modulate_color = Color(0.529412, 0.788235, 0.764706, 1)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="CanvasLayer" parent="."]
@@ -92,8 +106,9 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="Fish" type="Sprite2D" parent="."]
-position = Vector2(576, 380)
-texture = ExtResource("3_hruql")
+modulate = Color(1, 0.8875, 0.75, 1)
+position = Vector2(611, 380)
+texture = ExtResource("3_otfpf")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -109,10 +124,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = 14.0
-offset_right = -9.0
-offset_bottom = 90.0
+offset_left = -92.0
+offset_top = -34.0
+offset_right = -16.0
+offset_bottom = 42.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -127,65 +142,96 @@ theme_override_font_sizes/font_size = 50
 text = "10"
 horizontal_alignment = 1
 
-[node name="MainBox" type="PanelContainer" parent="Control/BattleMenu"]
-offset_left = 8.0
-offset_top = 420.0
-offset_right = 1078.0
-offset_bottom = 637.0
+[node name="MainBox" type="GridContainer" parent="Control/BattleMenu"]
+offset_left = 32.0
+offset_top = 380.0
+offset_right = 1120.0
+offset_bottom = 620.0
 
 [node name="DialogueRunner" type="Node" parent="Control/BattleMenu/MainBox" node_paths=PackedStringArray("dialogueViews")]
 script = ExtResource("5_libje")
 yarnProject = ExtResource("5_m4r5r")
-dialogueViews = [NodePath("../HBoxContainer/LineView"), NodePath("../HBoxContainer/OptionsListView")]
-startNode = "StartHandFish"
+dialogueViews = [NodePath("../HBoxContainer/PanelContainer/LineView"), NodePath("../HBoxContainer/PanelContainer2/OptionsListView")]
+startNode = "StartBreathingFish"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/BattleMenu/MainBox"]
 layout_mode = 2
 
-[node name="LineView" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer"]
-custom_minimum_size = Vector2(900, 0)
+[node name="PanelContainer" type="PanelContainer" parent="Control/BattleMenu/MainBox/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 11
+
+[node name="LineView" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer/PanelContainer" node_paths=PackedStringArray("continueButton")]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 script = ExtResource("4_pd852")
 viewControlPath = NodePath("Control")
 lineTextPath = NodePath("Label")
 typewriterEffectSpeed = 100.0
+continueButton = NodePath("Control/ContinueButton")
 palette = ExtResource("7_7q60n")
-autoAdvance = true
 
-[node name="Label" type="RichTextLabel" parent="Control/BattleMenu/MainBox/HBoxContainer/LineView"]
+[node name="Label" type="RichTextLabel" parent="Control/BattleMenu/MainBox/HBoxContainer/PanelContainer/LineView"]
 custom_minimum_size = Vector2(0, 200)
 layout_direction = 2
 layout_mode = 2
-text = "this is the text on the screen this is the text on the screenthi"
+theme_override_font_sizes/normal_font_size = 24
 autowrap_mode = 2
 
-[node name="Control" type="Control" parent="Control/BattleMenu/MainBox/HBoxContainer/LineView"]
+[node name="Control" type="Control" parent="Control/BattleMenu/MainBox/HBoxContainer/PanelContainer/LineView"]
 layout_mode = 2
 
-[node name="OptionsListView" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer" node_paths=PackedStringArray("lastLineText", "viewControl", "boxContainer")]
+[node name="ContinueButton" type="Button" parent="Control/BattleMenu/MainBox/HBoxContainer/PanelContainer/LineView/Control"]
+layout_mode = 2
+offset_left = 782.0
+offset_top = 178.0
+offset_right = 854.0
+offset_bottom = 250.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_3iyst")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c1svw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s10xe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c1svw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_s10xe")
+script = ExtResource("9_eubfb")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control/BattleMenu/MainBox/HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsListView" type="MarginContainer" parent="Control/BattleMenu/MainBox/HBoxContainer/PanelContainer2" node_paths=PackedStringArray("lastLineText", "viewControl", "boxContainer")]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 script = ExtResource("7_cb5j0")
 optionViewPrefab = ExtResource("8_fqvso")
 palette = ExtResource("7_7q60n")
-lastLineText = NodePath("../LineView/Label")
+lastLineText = NodePath("../../PanelContainer/LineView/Label")
 viewControl = NodePath("Control")
 boxContainer = NodePath("Control/VBoxContainer")
 
-[node name="Control" type="Control" parent="Control/BattleMenu/MainBox/HBoxContainer/OptionsListView"]
+[node name="Control" type="Control" parent="Control/BattleMenu/MainBox/HBoxContainer/PanelContainer2/OptionsListView"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/BattleMenu/MainBox/HBoxContainer/OptionsListView/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/BattleMenu/MainBox/HBoxContainer/PanelContainer2/OptionsListView/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 32
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_t7d7a")

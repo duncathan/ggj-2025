@@ -10,27 +10,27 @@ You've encountered {$fishName}! They have quite the austere appearance. Can't yo
 
 title: AustereFishBattleMenu
 ---
--> > TALK <<if $step is 0>>
+-> TALK <<if $step is 0>>
     <<jump AustereFishTalk1>>
--> > TALK <<if $step is 1>>
+-> TALK <<if $step is 1>>
     <<jump AustereFishTalk2>>
--> > BUBBLE
+-> BUBBLE
     <<jump AustereFishBubble>>
--> > BLUB
+-> BLUB
     <<jump AustereFishBlub>>
--> > SWIM AWAY
+-> SWIM AWAY
     <<jump AustereFishSwimAway>>
     
 ===
 
 title: AustereFishTalk1
 ---
--> > Casual
+-> Casual
     You: Hey there, you uh, wanna help me deal with What Lies Above?
     {$fishName}: Want? No. Will? Undecided.
     <<lose_air 1>>
     <<jump AustereFishBattleMenu>>
--> > Serious
+-> Serious
     You: I'm gathering everyone below to deal with What Lies Above. You're coming with me too.
     {$fishName}: Direct. I approve. But why will I come?
     <<set $step = $step + 1>>

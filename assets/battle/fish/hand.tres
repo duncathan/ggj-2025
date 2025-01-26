@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishProperties" load_steps=3 format=3 uid="uid://d3y4wo0ofsl1j"]
+
+[ext_resource type="Script" path="res://fish_properties.gd" id="1_tpqr1"]
+[ext_resource type="Texture2D" uid="uid://c2auhwavwb31e" path="res://assets/battle/fish/hand fish.png" id="2_v58ds"]
+
+[resource]
+script = ExtResource("1_tpqr1")
+texture = ExtResource("2_v58ds")
+modulate = Color(0.437393, 0.585938, 0.446529, 1)
+start_node = "StartHandFish"
+recruit_id = "Hand"
+return_pos = Vector2(982, 272)

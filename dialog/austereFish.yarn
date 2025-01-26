@@ -26,12 +26,12 @@ title: AustereFishBattleMenu
 title: AustereFishTalk1
 ---
 -> Casual
-    You: Hey there, you uh, wanna help me deal with What Lies Above?
+    You: Hey there, you uh, wanna help me deal with [evil]What Lies Above[/evil]?
     {$fishName}: Want? No. Will? Undecided.
     <<lose_air 1>>
     <<jump AustereFishBattleMenu>>
 -> Serious
-    You: I'm gathering everyone below to deal with What Lies Above. You're coming with me too.
+    You: I'm gathering everyone below to deal with [evil]What Lies Above[/evil]. You're coming with me too.
     {$fishName}: Direct. I approve. But why will I come?
     <<set $step = $step + 1>>
     <<lose_air 1>>
@@ -43,6 +43,7 @@ title: AustereFishTalk2
 -> Firm
     You: I need as many below as I can. It's the only way to make a bubble big enough to contain it.
     {$fishName}: Yes, that makes sense. If you do what you must, then I will come.
+    <<lose_air 1>>
     <<set $step = $step + 1>>
     <<jump AustereFishBattleMenu>>
 ===
@@ -64,6 +65,7 @@ You: Blub blub.
 <<else>>
     {$fishName}: Blub?
 <<endif>>
+<<lose_air 1>>
 <<set $blubstep = $blubstep + 1>>
 <<jump AustereFishBattleMenu>>
 ===

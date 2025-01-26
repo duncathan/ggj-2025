@@ -32,7 +32,7 @@ title: HandFishBattleMenu
 title: HandFishTalk1
 ---
 -> No Nonsense
-    You: Will you come with me, help me get enough strength to contain What Lies Above
+    You: Will you come with me, help me get enough strength to contain [evil]What Lies Above[/evil]
     {$fishName}: Ough, do I have to be that serious too? I don't know...
     <<lose_air 1>>
     <<jump HandFishBattleMenu>>
@@ -50,6 +50,7 @@ title: HandFishTalk2
     You: It's time we took matters into our own hands. The situation won't get better on its own.
     {$fishName}: Yeah! Another!
     <<set $step = $step + 1>>
+    <<lose_air 1>>
     <<jump HandFishBattleMenu>>
 ===
 
@@ -59,6 +60,7 @@ title: HandFishTalk3
     You: I've got to hand it to you, your help will be invaluable.
     {$fishName}: One more!
     <<set $step = $step + 1>>
+    <<lose_air 1>>
     <<jump HandFishBattleMenu>>
 ===
 
@@ -72,6 +74,7 @@ title: HandFishTalk4
     You: Promise?
     {$fishName}: Promise.
     <<set $step = $step + 1>>
+    <<lose_air 1>>
     <<jump HandFishBattleMenu>>
 ===
 
@@ -81,6 +84,7 @@ title: HandFishTalk5
     You: Hand over the goods! The goods being you!
     {$fishName}: Yes! Okay, you've shown me you can throw hands with the best of 'em. But now you gotta try and bubble ME first!
     <<set $step = $step + 1>>
+    <<lose_air 1>>
     <<jump HandFishBattleMenu>>
 ===
 
@@ -101,6 +105,7 @@ You: Blub blub.
     {$fishName}: Sigh, this has gotten out of hand.
 <<endif>>
 <<set $blubstep = $blubstep + 1>>
+<<lose_air 1>>
 <<jump HandFishBattleMenu>>
 ===
 

@@ -38,19 +38,19 @@ title: BreathingFishTalk1
     You: Not to burst your bubble, but... I'm leaving.
     {$fishName}: Har har... I still have enough air for awhile yet.
     {$fishName}: But you're really doing it now?
-    You: Yup. If i don't go now, What Lies Above will come for everything below.
+    You: Yup. If i don't go now, [evil]What Lies Above[/evil] will come for everything below.
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
 -> Fond
     You: Of course you'd be here to see me off.
     {$fishName}: You're finally going?
-    You: Yup. If i don't go now, What Lies Above will come for everything below.
+    You: Yup. If i don't go now, [evil]What Lies Above[/evil] will come for everything below.
     <<set $step = $step + 1>>
     <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
 -> Serious
-    You: I'm finally going out to contain What Lies Above.
+    You: I'm finally going out to contain [evil]What Lies Above[/evil].
     {$fishName}: No more time left, huh? Now or never.
     You: Now or never. I wait any longer and it'll come for everything below.
     <<set $step = $step + 1>>
@@ -66,6 +66,7 @@ title: BreathingFishTalk2
     You: Yeah.
     (To prove yourself to your fellows below the sea, you must blow a bubble big enough to capture them! The more companions you already have with you, the bigger fish you can bubble!)
     <<set $step = $step + 1>>
+    <<lose_air 1>>
     <<jump breathingFishBattleMenu>>
 ===
 
@@ -86,6 +87,7 @@ You: Blub blub.
 <<else>>
     {$fishName}: Hm. Is this how we're spending what little time we have left?
 <<endif>>
+<<lose_air 1>>
 <<set $blubstep = $blubstep + 1>>
 <<jump breathingFishBattleMenu>>
 ===

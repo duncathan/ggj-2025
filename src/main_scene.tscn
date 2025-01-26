@@ -39,6 +39,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ProgressBar" type="ProgressBar" parent="UI/OverWorld"]
+visible = false
 modulate = Color(0.129412, 1, 1, 1)
 layout_mode = 0
 offset_left = 10.0
@@ -51,6 +52,7 @@ value = 70.0
 show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="UI/OverWorld"]
+visible = false
 layout_mode = 0
 offset_left = 360.0
 offset_top = 605.0

@@ -1,15 +1,16 @@
-[gd_scene load_steps=25 format=3 uid="uid://chwjys424hay2"]
+[gd_scene load_steps=23 format=3 uid="uid://chwjys424hay2"]
 
 [ext_resource type="Shader" path="res://assets/Backgrounds.gdshader" id="1_s1x5i"]
 [ext_resource type="Texture2D" uid="uid://tblg4t311vrr" path="res://assets/Circles.png" id="2_b1cri"]
 [ext_resource type="Texture2D" uid="uid://yvsr6qr32p8y" path="res://assets/battle/fish/breathing fish.png" id="3_otfpf"]
+[ext_resource type="Texture2D" uid="uid://dsn23ksnb8cpp" path="res://assets/bubble.png" id="4_7yau8"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs" id="4_pd852"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="5_libje"]
 [ext_resource type="Resource" uid="uid://cfrqe2cpus5vm" path="res://dialog/dialog.yarnproject" id="5_m4r5r"]
-[ext_resource type="Resource" path="res://dialog/palette.tres" id="7_7q60n"]
+[ext_resource type="Resource" uid="uid://dpirxgodclyxr" path="res://dialog/palette.tres" id="7_7q60n"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="7_cb5j0"]
 [ext_resource type="Texture2D" uid="uid://d3p8dh5owmvs8" path="res://addons/YarnSpinner-Godot/Textures/NextLineIndicator.png" id="8_ciodu"]
-[ext_resource type="PackedScene" path="res://src/OptionView.tscn" id="8_fqvso"]
+[ext_resource type="PackedScene" uid="uid://yr71kqjqyxig" path="res://src/OptionView.tscn" id="8_fqvso"]
 [ext_resource type="Script" path="res://src/continue_button.gd" id="9_eubfb"]
 [ext_resource type="AudioStream" uid="uid://sjn02pa0grje" path="res://assets/music/perchlorate-111365.mp3" id="9_t7d7a"]
 
@@ -58,14 +59,6 @@ shader_parameter/enable_palette_cycling = true
 shader_parameter/enable_scan_lines = true
 shader_parameter/palette_speed = 0.1
 shader_parameter/palette = SubResource("GradientTexture1D_3fd6c")
-
-[sub_resource type="Gradient" id="Gradient_q4q25"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ckq7b"]
-gradient = SubResource("Gradient_q4q25")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xjxtp"]
-atlas = SubResource("GradientTexture2D_ckq7b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iyst"]
 texture = ExtResource("8_ciodu")
@@ -124,23 +117,25 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -34.0
-offset_right = -16.0
-offset_bottom = 42.0
+offset_left = -102.0
+offset_top = -299.0
+offset_right = -26.0
+offset_bottom = -223.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/BattleMenu/Bubble Counter"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_xjxtp")
-expand_mode = 2
-
 [node name="Label" type="Label" parent="Control/BattleMenu/Bubble Counter"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 36
 text = "10"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/BattleMenu/Bubble Counter"]
+layout_mode = 2
+texture = ExtResource("4_7yau8")
+expand_mode = 2
 
 [node name="MainBox" type="GridContainer" parent="Control/BattleMenu"]
 offset_left = 32.0
@@ -152,7 +147,7 @@ offset_bottom = 620.0
 script = ExtResource("5_libje")
 yarnProject = ExtResource("5_m4r5r")
 dialogueViews = [NodePath("../HBoxContainer/PanelContainer/LineView"), NodePath("../HBoxContainer/PanelContainer2/OptionsListView")]
-startNode = "StartBreathingFish"
+startNode = "StartHandFish"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/BattleMenu/MainBox"]
 layout_mode = 2

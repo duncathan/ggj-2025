@@ -19,10 +19,15 @@ func _on_movement_facing_changed(previous: Global.HDirs, new: Global.HDirs) -> v
 func _on_movement_movement_state_changed(previous: Movement.State, new: Movement.State) -> void:
 	if new == Movement.State.IDLE:
 		self.animation = "default"
-	elif new in [Movement.State.RUNNING, Movement.State.FALLING, Movement.State.JUMPING]:
+	elif new in [Movement.State.RUNNING]:
 		if self.facing == Global.HDirs.LEFT:
 			self.play("walk_right")
 		else:
 			self.play("walk_left")
+	elif new in [Movement.State.FALLING, Movement.State.JUMPING]:
+		if self.facing == Global.HDirs.LEFT:
+			self.play("swim_right")
+		else:
+			self.play("swim_left")
 	elif new == Movement.State.FAST_FALLING:
 		self.animation = "dive"

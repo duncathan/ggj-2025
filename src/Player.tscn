@@ -188,11 +188,13 @@ process_physics_priority = -1
 script = ExtResource("1_bppwm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_w5fwd")
 animation = &"swim_right"
 script = ExtResource("5_1d0qt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 limit_right = 2080

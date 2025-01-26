@@ -11,6 +11,8 @@ var bubble_label: Label = get_node("Control/BattleMenu/Bubble Counter/BubbleLabe
 
 var should_reset: bool = true
 
+const boss_music = preload("res://assets/music/dark-piano-ambient-background-music-wasteland-275331.mp3")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var fish := GameManager.current_fish
@@ -21,6 +23,9 @@ func _ready() -> void:
 		self.fish_sprite.modulate = Color.WHITE
 		$background.visible = false
 		$evil_background.visible = true
+		$AudioStreamPlayer.stream = boss_music
+	
+	$AudioStreamPlayer.play()
 	
 	self.dialog_runner.AddCommandHandlerCallable("lose_air", self.lose_air)
 	self.dialog_runner.AddCommandHandlerCallable("blow_bubble", self.blow_bubble)

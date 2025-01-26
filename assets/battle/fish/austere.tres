@@ -9,4 +9,4 @@ texture = ExtResource("2_8gdv2")
 modulate = Color(0.1947, 0.196955, 0.33, 1)
 start_node = "StartAustereFish"
 recruit_id = "Austere"
-return_pos = Vector2(240, 300)
+return_pos = Vector2(1735, 209)

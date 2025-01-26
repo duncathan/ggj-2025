@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://src/player_sprite.gd" id="5_1d0qt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlqec"]
-size = Vector2(30, 30)
+size = Vector2(18, 28)
 
 [sub_resource type="Resource" id="Resource_luk7k"]
 script = ExtResource("2_j8414")
@@ -188,6 +188,7 @@ collision_layer = 3
 script = ExtResource("1_q8e7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_tlqec")
 
 [node name="Movement" parent="." instance=ExtResource("2_bppbm")]
@@ -207,8 +208,8 @@ script = ExtResource("5_1d0qt")
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
-limit_right = 2080
-limit_bottom = 1180
+limit_right = 2592
+limit_bottom = 960
 limit_smoothed = true
 
 [connection signal="facing_changed" from="Movement" to="AnimatedSprite2D" method="_on_movement_facing_changed"]

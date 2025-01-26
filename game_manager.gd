@@ -24,7 +24,7 @@ func start_battle(fish: FishProperties):
 	get_tree().call_deferred("change_scene_to_packed", battle)
 
 func leave_battle():
-	if self.bubble_timer > 0:
+	if self.bubble_timer > 10:
 		# win the battle
 		self.recruits[self.current_fish.recruit_id] = true
 	get_tree().call_deferred("change_scene_to_packed", overworld)

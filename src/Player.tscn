@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl8erfewjd507"]
+[gd_scene load_steps=25 format=3 uid="uid://bl8erfewjd507"]
 
 [ext_resource type="Script" path="res://src/scripts/player_controls.gd" id="1_bppwm"]
 [ext_resource type="PackedScene" uid="uid://l52k1xfcffsr" path="res://src/scripts/Movement.tscn" id="2_bppbm"]
@@ -30,6 +30,38 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgsu3"]
 atlas = ExtResource("4_v4y20")
 region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m22cq"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wq1r"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7wut"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftex0"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjjfv"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7lho"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufy4l"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhvb3"]
+atlas = ExtResource("4_v4y20")
+region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fqa3"]
 atlas = ExtResource("4_v4y20")
@@ -71,6 +103,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"dive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m22cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wq1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7wut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftex0")
+}],
+"loop": true,
+"name": &"swim_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjjfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7lho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufy4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhvb3")
+}],
+"loop": true,
+"name": &"swim_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -123,7 +189,7 @@ script = ExtResource("1_bppwm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w5fwd")
-animation = &"dive"
+animation = &"swim_right"
 script = ExtResource("5_1d0qt")
 
 [node name="Camera2D" type="Camera2D" parent="."]

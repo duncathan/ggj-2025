@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FishProperties" load_steps=3 format=3 uid="uid://cqiyi5xe7jkqv"]
+
+[ext_resource type="Script" path="res://fish_properties.gd" id="1_melw2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gwqex"]
+
+[resource]
+script = ExtResource("1_melw2")
+texture = SubResource("PlaceholderTexture2D_gwqex")
+modulate = Color(0.193963, 0, 0.382813, 1)
+start_node = "StartWhatLiesAbove"
+recruit_id = "WhatLiesAbove"
+return_pos = Vector2(240, 300)

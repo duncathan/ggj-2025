@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dotjhq8nq71n0"]
+[gd_scene load_steps=12 format=4 uid="uid://dotjhq8nq71n0"]
 
 [ext_resource type="TileSet" uid="uid://cwsdmcljtjrjg" path="res://assets/playground.tres" id="1_wfj56"]
 [ext_resource type="PackedScene" uid="uid://bl8erfewjd507" path="res://src/Player.tscn" id="2_1pbjj"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://d1qivyt8pwoxp" path="res://src/bubble_encounter.tscn" id="4_pcun8"]
 [ext_resource type="Texture2D" uid="uid://cpwhhxbt40cvp" path="res://assets/overworld/bck_test_layer0.png" id="4_wscv7"]
 [ext_resource type="Texture2D" uid="uid://qutfm64stka1" path="res://assets/overworld/bck_test_layer1.png" id="5_j4ydb"]
+[ext_resource type="Resource" uid="uid://bq5oc47xjvxlx" path="res://assets/battle/fish/austere.tres" id="8_w84q1"]
+[ext_resource type="Resource" uid="uid://cby3xmihe7dpa" path="res://assets/battle/fish/boyfriend.tres" id="9_ba0ek"]
+[ext_resource type="Resource" uid="uid://cb73wkmvxpw6h" path="res://assets/battle/fish/breathing.tres" id="9_mr8ei"]
+[ext_resource type="Resource" uid="uid://cqiyi5xe7jkqv" path="res://assets/battle/whatliesabove/properties.tres" id="11_dfwm6"]
 
 [node name="Level" type="Node2D"]
 
@@ -68,7 +72,18 @@ repeat_times = 3
 texture_filter = 1
 texture = ExtResource("4_wscv7")
 
-[node name="BubbleEncounter" parent="." instance=ExtResource("4_pcun8")]
-position = Vector2(288, 304)
+[node name="austere_encounter" parent="." instance=ExtResource("4_pcun8")]
+position = Vector2(340, 244)
+fish_data = ExtResource("8_w84q1")
 
-[editable path="BubbleEncounter"]
+[node name="boyfriend_encounter" parent="." instance=ExtResource("4_pcun8")]
+position = Vector2(337, 156)
+fish_data = ExtResource("9_ba0ek")
+
+[node name="breath_encounter" parent="." instance=ExtResource("4_pcun8")]
+position = Vector2(288, 304)
+fish_data = ExtResource("9_mr8ei")
+
+[node name="what_lies_above" parent="." instance=ExtResource("4_pcun8")]
+position = Vector2(48, 48)
+fish_data = ExtResource("11_dfwm6")

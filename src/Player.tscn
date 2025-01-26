@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://bl8erfewjd507"]
+[gd_scene load_steps=28 format=3 uid="uid://bl8erfewjd507"]
 
 [ext_resource type="Script" path="res://src/scripts/player_controls.gd" id="1_bppwm"]
+[ext_resource type="Script" path="res://src/player.gd" id="1_q8e7w"]
 [ext_resource type="PackedScene" uid="uid://l52k1xfcffsr" path="res://src/scripts/Movement.tscn" id="2_bppbm"]
 [ext_resource type="Script" path="res://src/scripts/PhysicsAttributes.gd" id="2_j8414"]
 [ext_resource type="Texture2D" uid="uid://d5ll536er2cf" path="res://assets/overworld/annie.png" id="4_v4y20"]
@@ -184,6 +185,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
+script = ExtResource("1_q8e7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tlqec")

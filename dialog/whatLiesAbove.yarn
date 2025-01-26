@@ -1,0 +1,50 @@
+title: StartWhatLiesAbove
+---
+<<set $fishName to "[evil]What Lies Above[/evil]">>
+You've encountered {$fishName}! 
+(The noise it makes shakes the small outcropping you've stood upon. No matter what happens- this hollow sound will follow you to your grave.)
+<<set $step to 0>>
+<<set $blubstep = 0>>
+<<declare $tryLeave = 0>>
+<<jump WhatLiesAboveBattleMenu>>
+===
+
+title: WhatLiesAboveBattleMenu
+---
+-> TALK <<if $step is 0>>
+    <<jump WhatLiesAboveTalk1>>
+-> BUBBLE
+    <<jump WhatLiesAboveBubble>>
+-> BLUB <<if $blubstep is 0 >>
+    <<jump WhatLiesAboveBlub>>
+-> SWIM AWAY <<if $tryLeave is 0 >>
+    <<jump WhatLiesAboveSwimAway>>
+    
+===
+
+title: WhatLiesAboveTalk1
+---
+(What would you even say? What would it say back?)
+<<set $step = $step + 1>>
+    <<jump WhatLiesAboveBattleMenu>>
+===
+
+title: WhatLiesAboveBubble
+---
+You: Everyone! Now! Let's do this!
+<<jump WhatLiesAboveBattleMenu>>
+===
+
+title: WhatLiesAboveBlub
+---
+(There's no water to [emphasis]Blub[/emphasis] with! Now's not the time!)
+<<set $blubstep = $blubstep + 1>>
+<<jump WhatLiesAboveBattleMenu>>
+===
+
+title: WhatLiesAboveSwimAway
+---
+(You can't leave! It's now or never!)
+<<set $tryLeave = $tryLeave + 1>>
+<<jump WhatLiesAboveBattleMenu>>
+===

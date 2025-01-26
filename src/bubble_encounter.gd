@@ -10,7 +10,8 @@ func _ready() -> void:
 		queue_free()
 		return
 	
-	self.modulate = self.fish_data.modulate
+	self.modulate = Color.WHITE
+	$Sprite2D/Sprite2D.modulate = self.fish_data.modulate
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

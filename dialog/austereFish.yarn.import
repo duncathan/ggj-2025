@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://blt01a70sd4at"
+path="res://.godot/imported/austereFish.yarn-b73ecf63f755fa8fb58b71e8ce768f7c.tres"
+
+[deps]
+
+source_file="res://dialog/austereFish.yarn"
+dest_files=["res://.godot/imported/austereFish.yarn-b73ecf63f755fa8fb58b71e8ce768f7c.tres"]
+
+[params]
+

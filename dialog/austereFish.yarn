@@ -1,7 +1,7 @@
 title: StartAustereFish
 ---
-You've encountered Austere Fish! They have quite the austere appearance. Can't you tell?
 <<set $fishName to "Austere Fish">>
+You've encountered {$fishName}! They have quite the austere appearance. Can't you tell?
 {$fishName}: Hello.
 <<set $step to 0>>
 <<set $blubstep = 0>>

@@ -1,7 +1,7 @@
 title: StartBreathingFish
 ---
-You've encountered Breathing Fish! They have a bubble over their head, just like you!
 <<set $fishName to "Breathing Fish">>
+You've encountered {$fishName}! They have a bubble over their head, just like you!
 {$fishName}: Oh, hello!
 <<set $step to 0>>
 <<set $blubstep to 0>>
